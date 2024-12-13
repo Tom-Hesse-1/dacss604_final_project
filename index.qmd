@@ -2,14 +2,6 @@
 title: "dacss604_final_project"
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```
-
 # Polarization, Division: The New American Norm?
 
 \[Topic Sentence Here\]. To even casual observers, polarization and division seem to characterize American politics. Bitter political cleavages have been formed along the lines of several factors: political ideologies (**Source**), age groups (**Source**), racial/ethnic identities (**Source**), and more. One divide stands out as particularly stark: geography. Rural and Urban politics are particularly polarized. Americans living in different types of geographic settings have opposing ideas on political issues (**Source**). *Give examples polarization*.
@@ -20,8 +12,10 @@ Political division has wide-reaching negative effects on both individuals and gr
 
 # This Project
 
-This project examines the role of geographic division in Massachusetts state politics. Far less research has been dedicated to this topic than politics at the national level. However, state governments have significant power in the US. Therefore, it bears worth to examine how the important phenomenon of political division may be affecting governance at the state level. Each state has its own politics and issues, therefore it would be a monumental task to examine all states in one project. To approach the matter with appropriate depth, this project examines politics in one state only, The Bay State: Massachusetts.
+This project examines the role of geographic division in Massachusetts state politics. Far less research has been dedicated to this topic than politics at the national level. However, state governments have significant power in the US. Therefore, it bears worth to examine how the important phenomenon of political division may be affecting governance at the state level. Each state has its own politics and issues, therefore it would be a monumental task to examine all states in one project. To approach the matter with appropriate depth, this project examines politics in one state only, The Bay State: The Commonwealth of Massachusetts.
 
 Massachusetts' state government has a similar structure to the US federal government: An executive branch, responsible for the enforcement of laws, headed by a single executive (the governor) with numerous agencies; A bicameral legislative branch (having two distinct chambers) charged with the creation of new laws; and a judicial branch, composed of a system of courts that interpret the laws. This project investigates the question of geographic division in Massachusetts politics by examining the legislative branch specifically.
 
-This project
+This project uses a mixed methods (utilizing both quantitative and qualitative methods) approach to study political cooperation in the Massachusetts legislature. The quantitative portion examines the Massachusetts General Court, Massachusetts' equivalent to the US' House of Representatives. The General Court consists of elected legislators that represent the different geographic districts of Massachusetts. The qualitative portion studies the other chamber of Massachusetts' legislature, the Massachusetts Senate.
+
+The quantitative portion of the project examines political cooperation in Massachusetts' 192nd General Court. This legislative body was in session throughout 2021 and 2022. The primary method of investigation was network analysis of this body. Network Analysis
