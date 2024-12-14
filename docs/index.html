@@ -157,6 +157,2844 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="network-analysis-of-massachusetts-house-of-representatives-20212022" class="level1">
 <h1>Network Analysis of Massachusetts House of Representatives, 2021–2022</h1>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggplot2' was built under R version 4.3.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.3     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.5.0     ✔ tibble    3.2.1
+✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'igraph' was built under R version 4.3.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'igraph'
+
+The following objects are masked from 'package:lubridate':
+
+    %--%, union
+
+The following objects are masked from 'package:dplyr':
+
+    as_data_frame, groups, union
+
+The following objects are masked from 'package:purrr':
+
+    compose, simplify
+
+The following object is masked from 'package:tidyr':
+
+    crossing
+
+The following object is masked from 'package:tibble':
+
+    as_data_frame
+
+The following objects are masked from 'package:stats':
+
+    decompose, spectrum
+
+The following object is masked from 'package:base':
+
+    union</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'statnet' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: tergm</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tergm' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: ergm</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ergm' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: network</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'network' was built under R version 4.3.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+'network' 1.18.2 (2023-12-04), part of the Statnet Project
+* 'news(package="network")' for changes since last version
+* 'citation("network")' for citation information
+* 'https://statnet.org' for help, support, and other information
+
+
+Attaching package: 'network'
+
+The following objects are masked from 'package:igraph':
+
+    %c%, %s%, add.edges, add.vertices, delete.edges, delete.vertices,
+    get.edge.attribute, get.edges, get.vertex.attribute, is.bipartite,
+    is.directed, list.edge.attributes, list.vertex.attributes,
+    set.edge.attribute, set.vertex.attribute
+
+
+'ergm' 4.6.0 (2023-12-17), part of the Statnet Project
+* 'news(package="ergm")' for changes since last version
+* 'citation("ergm")' for citation information
+* 'https://statnet.org' for help, support, and other information
+
+'ergm' 4 is a major update that introduces some backwards-incompatible
+changes. Please type 'news(package="ergm")' for a list of major
+changes.
+
+Loading required package: networkDynamic</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'networkDynamic' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+'networkDynamic' 0.11.4 (2023-12-10?), part of the Statnet Project
+* 'news(package="networkDynamic")' for changes since last version
+* 'citation("networkDynamic")' for citation information
+* 'https://statnet.org' for help, support, and other information
+
+Registered S3 method overwritten by 'tergm':
+  method                   from
+  simulate_formula.network ergm
+
+'tergm' 4.2.0 (2023-05-30), part of the Statnet Project
+* 'news(package="tergm")' for changes since last version
+* 'citation("tergm")' for citation information
+* 'https://statnet.org' for help, support, and other information
+
+
+Attaching package: 'tergm'
+
+The following object is masked from 'package:ergm':
+
+    snctrl
+
+Loading required package: ergm.count</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ergm.count' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+'ergm.count' 4.1.1 (2022-05-24), part of the Statnet Project
+* 'news(package="ergm.count")' for changes since last version
+* 'citation("ergm.count")' for citation information
+* 'https://statnet.org' for help, support, and other information
+
+Loading required package: sna</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'sna' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: statnet.common</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'statnet.common' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'statnet.common'
+
+The following object is masked from 'package:ergm':
+
+    snctrl
+
+The following objects are masked from 'package:base':
+
+    attr, order
+
+sna: Tools for Social Network Analysis
+Version 2.7-2 created on 2023-12-05.
+copyright (c) 2005, Carter T. Butts, University of California-Irvine
+ For citation information, type citation("sna").
+ Type help(package="sna") to get started.
+
+
+Attaching package: 'sna'
+
+The following objects are masked from 'package:igraph':
+
+    betweenness, bonpow, closeness, components, degree, dyad.census,
+    evcent, hierarchy, is.connected, neighborhood, triad.census
+
+Loading required package: tsna</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tsna' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+'statnet' 2019.6 (2019-06-13), part of the Statnet Project
+* 'news(package="statnet")' for changes since last version
+* 'citation("statnet")' for citation information
+* 'https://statnet.org' for help, support, and other information
+
+unable to reach CRAN</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'stringi' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'GGally' was built under R version 4.3.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Registered S3 method overwritten by 'GGally':
+  method from   
+  +.gg   ggplot2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'blockmodeling' was built under R version 4.3.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>To cite package 'blockmodeling' in publications please use package
+citation and (at least) one of the articles:
+
+  Žiberna, Aleš (2007). Generalized blockmodeling of valued networks.
+  Social Networks 29(1), 105-126.
+
+  Žiberna, Aleš (2008). Direct and indirect approaches to blockmodeling
+  of valued networks in terms of regular equivalence. Journal of
+  Mathematical Sociology 32(1), 57–84.
+
+  Žiberna, Aleš (2014). Blockmodeling of multilevel networks. Social
+  Networks 39, 46–61. https://doi.org/10.1016/j.socnet.2014.04.002.
+
+  Žiberna, Aleš (2023).  Generalized and Classical Blockmodeling of
+  Valued Networks, R package version 1.1.5.
+  Cugmas, Marjan (2023).  Generalized and Classical Blockmodeling of
+  Valued Networks, R package version 1.1.5.
+
+To see these entries in BibTeX format, use 'format(&lt;citation&gt;,
+bibtex=TRUE)', or 'toBibtex(.)'.
+
+Attaching package: 'blockmodeling'
+
+The following object is masked from 'package:sna':
+
+    sedist
+
+The following object is masked from 'package:dplyr':
+
+    recode</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>                                                ind values
+1                      Adam Scanlon—Alyson Sullivan      1
+2                       Adam Scanlon—Antonio Cabral      1
+3                        Adam Scanlon—Carol Doherty      1
+4                  Adam Scanlon—Christina Minicucci      1
+5                Adam Scanlon—Christopher Hendricks      1
+6                         Adam Scanlon—Chynah Tyler      1
+7                         Adam Scanlon—Danillo Sena      1
+8                        Adam Scanlon—David DeCoste      1
+9                      Adam Scanlon—David Robertson      2
+10                        Adam Scanlon—David Vieira      1
+11                   Adam Scanlon—Donald Berthiaume      1
+12                     Adam Scanlon—Dylan Fernandes      1
+13                     Adam Scanlon—Elizabeth Malia      1
+14                         Adam Scanlon—James O'Day      1
+15                      Adam Scanlon—Joseph Kearney      1
+16                      Adam Scanlon—Joseph McKenna      1
+17                    Adam Scanlon—Lindsay Sabadosa      1
+18                          Adam Scanlon—Mary Keefe      1
+19                     Adam Scanlon—Mathew Muratore      1
+20                       Adam Scanlon—Michael Soter      1
+21                     Adam Scanlon—Michelle DuBois      1
+22                     Adam Scanlon—Natalie Higgins      1
+23                        Adam Scanlon—Peter Capano      1
+24                        Adam Scanlon—Shawn Dooley      1
+25                       Adam Scanlon—Steven Howitt      1
+26                      Adam Scanlon—Steven Ultrino      1
+27                        Adam Scanlon—Tami Gouveia      1
+28                        Adam Scanlon—Tommy Vitolo      1
+29                         Adam Scanlon—Tram Nguyen      1
+30               Adam Scanlon—Tricia Farley-Bouvier      1
+31                      Adrian Madaro—Andres Vargas      2
+32                     Adrian Madaro—Antonio Cabral      1
+33               Adrian Madaro—Brandy Fluker Oakley      1
+34                    Adrian Madaro—Carlos González      2
+35                    Adrian Madaro—Carmine Gentile      1
+36                      Adrian Madaro—Carol Doherty      1
+37                       Adrian Madaro—Carole Fiola      1
+38                     Adrian Madaro—Carolyn Dykema      1
+39                Adrian Madaro—Christina Minicucci      2
+40                   Adrian Madaro—Christine Barber      2
+41                        Adrian Madaro—Daniel Ryan      1
+42                       Adrian Madaro—Danillo Sena      2
+43                      Adrian Madaro—David LeBoeuf      2
+44                  Adrian Madaro—David Paul Linsky      1
+45                       Adrian Madaro—David Rogers      2
+46                    Adrian Madaro—Dylan Fernandes      2
+47                    Adrian Madaro—Elizabeth Malia      1
+48                  Adrian Madaro—Erika Uyterhoeven      1
+49                     Adrian Madaro—Gerard Cassidy      1
+50                 Adrian Madaro—Harriette Chandler      1
+51                         Adrian Madaro—Jack Lewis      1
+52                 Adrian Madaro—Jack Patrick Lewis      1
+53                     Adrian Madaro—Jacob Oliveira      2
+54                        Adrian Madaro—James O'Day      1
+55                   Adrian Madaro—Jessica Giannino      1
+56                      Adrian Madaro—Joan Meschino      1
+57                       Adrian Madaro—Jon Santiago      1
+58                   Adrian Madaro—Joseph McGonagle      1
+59                           Adrian Madaro—Kay Khan      1
+60                          Adrian Madaro—Kip Diggs      1
+61                    Adrian Madaro—Linday Sabadosa      1
+62                   Adrian Madaro—Lindsay Sabadosa      1
+63                        Adrian Madaro—Liz Miranda      1
+64                       Adrian Madaro—Lori Ehrlich      1
+65                      Adrian Madaro—Marcos Devers      1
+66                       Adrian Madaro—Maria Duaime      1
+67                     Adrian Madaro—Maria Robinson      1
+68                    Adrian Madaro—Marjorie Decker      1
+69                         Adrian Madaro—Mary Keefe      1
+70                    Adrian Madaro—Mathew Muratore      1
+71                  Adrian Madaro—Michael Kushmerek      1
+72                   Adrian Madaro—Michelle Ciccolo      2
+73                    Adrian Madaro—Michelle DuBois      1
+74                         Adrian Madaro—Mindy Domb      1
+75                    Adrian Madaro—Natalie Higgins      2
+76                      Adrian Madaro—Nika Elugardo      1
+77                     Adrian Madaro—Patricia Duffy      2
+78                    Adrian Madaro—Patricia Haddad      1
+79                        Adrian Madaro—Paul Donato      2
+80                       Adrian Madaro—Peter Capano      1
+81                           Adrian Madaro—Rady Mom      1
+82                        Adrian Madaro—Ruth Balser      2
+83                     Adrian Madaro—Sean Garballey      1
+84                       Adrian Madaro—Steven Owens      2
+85                     Adrian Madaro—Steven Ultrino      2
+86                        Adrian Madaro—Tackey Chan      1
+87                       Adrian Madaro—Tami Gouveia      2
+88                       Adrian Madaro—Tommy Vitolo      1
+89                        Adrian Madaro—Tram Nguyen      2
+90              Adrian Madaro—Tricia Farley-Bouvier      2
+91                       Adrian Madaro—Vanna Howard      2
+92                     Adrian Madaro—William Galvin      1
+93                   Alyson Sullivan—Antonio Cabral      1
+94                    Alyson Sullivan—Bradley Jones      1
+95                    Alyson Sullivan—Carol Doherty      1
+96              Alyson Sullivan—Christina Minicucci      1
+97            Alyson Sullivan—Christopher Hendricks      1
+98                     Alyson Sullivan—Chynah Tyler      1
+99                     Alyson Sullivan—Danillo Sena      1
+100                   Alyson Sullivan—David DeCoste      1
+101                 Alyson Sullivan—David Robertson      1
+102                    Alyson Sullivan—David Vieira      1
+103               Alyson Sullivan—Donald Berthiaume      1
+104                 Alyson Sullivan—Dylan Fernandes      1
+105                 Alyson Sullivan—Elizabeth Malia      1
+106                     Alyson Sullivan—Hannah Kane      1
+107                  Alyson Sullivan—Joseph Kearney      1
+108                  Alyson Sullivan—Joseph McKenna      1
+109               Alyson Sullivan—Kimberly Ferguson      1
+110                Alyson Sullivan—Lindsay Sabadosa      1
+111                      Alyson Sullivan—Mary Keefe      1
+112                 Alyson Sullivan—Mathew Muratore      2
+113                   Alyson Sullivan—Michael Soter      1
+114                 Alyson Sullivan—Michelle DuBois      1
+115                      Alyson Sullivan—Paul Frost      1
+116                    Alyson Sullivan—Peter Capano      1
+117                    Alyson Sullivan—Shawn Dooley      1
+118                   Alyson Sullivan—Steven Howitt      2
+119                   Alyson Sullivan—Susan Gifford      1
+120                    Alyson Sullivan—Tami Gouveia      1
+121                     Alyson Sullivan—Tram Nguyen      1
+122                    Andres Vargas—Antonio Cabral      1
+123              Andres Vargas—Brandy Fluker Oakley      1
+124                   Andres Vargas—Carlos González      2
+125                   Andres Vargas—Carmine Gentile      1
+126                     Andres Vargas—Carol Doherty      1
+127                      Andres Vargas—Carole Fiola      1
+128                    Andres Vargas—Carolyn Dykema      1
+129               Andres Vargas—Christina Minicucci      2
+130                  Andres Vargas—Christine Barber      2
+131                       Andres Vargas—Daniel Ryan      1
+132                      Andres Vargas—Danillo Sena      2
+133                     Andres Vargas—David LeBoeuf      2
+134                 Andres Vargas—David Paul Linsky      1
+135                      Andres Vargas—David Rogers      2
+136                   Andres Vargas—Dylan Fernandes      2
+137                   Andres Vargas—Elizabeth Malia      1
+138                 Andres Vargas—Erika Uyterhoeven      1
+139                    Andres Vargas—Gerard Cassidy      1
+140                Andres Vargas—Harriette Chandler      1
+141                        Andres Vargas—Jack Lewis      1
+142                Andres Vargas—Jack Patrick Lewis      1
+143                    Andres Vargas—Jacob Oliveira      2
+144                       Andres Vargas—James O'Day      1
+145                  Andres Vargas—Jessica Giannino      1
+146                     Andres Vargas—Joan Meschino      1
+147                      Andres Vargas—Jon Santiago      1
+148                  Andres Vargas—Joseph McGonagle      1
+149                          Andres Vargas—Kay Khan      1
+150                         Andres Vargas—Kip Diggs      1
+151                   Andres Vargas—Linday Sabadosa      1
+152                  Andres Vargas—Lindsay Sabadosa      1
+153                       Andres Vargas—Liz Miranda      1
+154                      Andres Vargas—Lori Ehrlich      1
+155                     Andres Vargas—Marcos Devers      1
+156                      Andres Vargas—Maria Duaime      1
+157                    Andres Vargas—Maria Robinson      1
+158                   Andres Vargas—Marjorie Decker      1
+159                        Andres Vargas—Mary Keefe      1
+160                   Andres Vargas—Mathew Muratore      1
+161                 Andres Vargas—Michael Kushmerek      1
+162                  Andres Vargas—Michelle Ciccolo      2
+163                   Andres Vargas—Michelle DuBois      1
+164                        Andres Vargas—Mindy Domb      1
+165                   Andres Vargas—Natalie Higgins      2
+166                     Andres Vargas—Nika Elugardo      1
+167                    Andres Vargas—Patricia Duffy      2
+168                   Andres Vargas—Patricia Haddad      1
+169                       Andres Vargas—Paul Donato      2
+170                      Andres Vargas—Peter Capano      1
+171                          Andres Vargas—Rady Mom      1
+172                       Andres Vargas—Ruth Balser      2
+173                    Andres Vargas—Sean Garballey      1
+174                      Andres Vargas—Steven Owens      2
+175                    Andres Vargas—Steven Ultrino      2
+176                       Andres Vargas—Tackey Chan      1
+177                      Andres Vargas—Tami Gouveia      2
+178                      Andres Vargas—Tommy Vitolo      1
+179                       Andres Vargas—Tram Nguyen      2
+180             Andres Vargas—Tricia Farley-Bouvier      2
+181                      Andres Vargas—Vanna Howard      2
+182                    Andres Vargas—William Galvin      1
+183                   Angelo D'Emilia—Bradley Jones      1
+184                 Angelo D'Emilia—David Robertson      1
+185               Angelo D'Emilia—Donald Berthiaume      1
+186                  Angelo D'Emilia—F. Jay Barrows      1
+187                     Angelo D'Emilia—Hannah Kane      1
+188               Angelo D'Emilia—Kimberly Ferguson      1
+189                   Angelo D'Emilia—Michael Soter      1
+190               Angelo D'Emilia—Sheila Harrington      1
+191                   Angelo D'Emilia—Steven Howitt      1
+192           Angelo D'Emilia—Tricia Farley-Bouvier      1
+193                    Angelo D'Emilia—Vanna Howard      1
+194                      Angelo Puppolo—Daniel Ryan      1
+195             Antonio Cabral—Brandy Fluker Oakley      1
+196                  Antonio Cabral—Carlos González      1
+197                  Antonio Cabral—Carmine Gentile      1
+198                    Antonio Cabral—Carol Doherty      3
+199                     Antonio Cabral—Carole Fiola      2
+200                   Antonio Cabral—Carolyn Dykema      1
+201              Antonio Cabral—Christina Minicucci      2
+202                 Antonio Cabral—Christine Barber      1
+203            Antonio Cabral—Christopher Hendricks      2
+204                     Antonio Cabral—Chynah Tyler      1
+205                     Antonio Cabral—Danillo Sena      2
+206                    Antonio Cabral—David DeCoste      1
+207                    Antonio Cabral—David LeBoeuf      1
+208                Antonio Cabral—David Paul Linsky      1
+209                  Antonio Cabral—David Robertson      1
+210                     Antonio Cabral—David Rogers      1
+211                     Antonio Cabral—David Vieira      1
+212                Antonio Cabral—Donald Berthiaume      1
+213                  Antonio Cabral—Dylan Fernandes      2
+214                  Antonio Cabral—Elizabeth Malia      2
+215               Antonio Cabral—Harriette Chandler      1
+216               Antonio Cabral—Jack Patrick Lewis      1
+217                   Antonio Cabral—Jacob Oliveira      1
+218                      Antonio Cabral—James O'Day      2
+219                   Antonio Cabral—Joseph Kearney      1
+220                   Antonio Cabral—Joseph McKenna      1
+221                        Antonio Cabral—Kip Diggs      1
+222                  Antonio Cabral—Linday Sabadosa      1
+223                 Antonio Cabral—Lindsay Sabadosa      2
+224                      Antonio Cabral—Liz Miranda      1
+225                     Antonio Cabral—Lori Ehrlich      1
+226                    Antonio Cabral—Marcos Devers      1
+227                     Antonio Cabral—Maria Duaime      1
+228                       Antonio Cabral—Mary Keefe      1
+229                  Antonio Cabral—Mathew Muratore      2
+230                Antonio Cabral—Michael Kushmerek      1
+231                    Antonio Cabral—Michael Soter      1
+232                 Antonio Cabral—Michelle Ciccolo      2
+233                  Antonio Cabral—Michelle DuBois      3
+234                  Antonio Cabral—Natalie Higgins      1
+235                   Antonio Cabral—Patricia Duffy      1
+236                  Antonio Cabral—Patricia Haddad      1
+237                      Antonio Cabral—Paul Donato      1
+238                      Antonio Cabral—Paul Schmid      1
+239                     Antonio Cabral—Peter Capano      1
+240                         Antonio Cabral—Rady Mom      1
+241                      Antonio Cabral—Ruth Balser      1
+242                     Antonio Cabral—Shawn Dooley      1
+243                    Antonio Cabral—Steven Howitt      1
+244                     Antonio Cabral—Steven Owens      2
+245                   Antonio Cabral—Steven Ultrino      1
+246                      Antonio Cabral—Tackey Chan      1
+247                     Antonio Cabral—Tami Gouveia      3
+248                      Antonio Cabral—Tram Nguyen      3
+249            Antonio Cabral—Tricia Farley-Bouvier      1
+250                     Antonio Cabral—Vanna Howard      1
+251                   Antonio Cabral—William Galvin      1
+252                   Bradley Jones—David Robertson      1
+253                 Bradley Jones—Donald Berthiaume      1
+254                    Bradley Jones—F. Jay Barrows      1
+255                       Bradley Jones—Hannah Kane      2
+256                 Bradley Jones—Kimberly Ferguson      2
+257                   Bradley Jones—Mathew Muratore      1
+258                     Bradley Jones—Michael Soter      1
+259                        Bradley Jones—Paul Frost      1
+260                 Bradley Jones—Sheila Harrington      1
+261                     Bradley Jones—Steven Howitt      2
+262                     Bradley Jones—Susan Gifford      1
+263             Bradley Jones—Tricia Farley-Bouvier      1
+264                      Bradley Jones—Vanna Howard      1
+265            Brandy Fluker Oakley—Carlos González      1
+266              Brandy Fluker Oakley—Carol Doherty      1
+267               Brandy Fluker Oakley—Carole Fiola      1
+268             Brandy Fluker Oakley—Carolyn Dykema      1
+269        Brandy Fluker Oakley—Christina Minicucci      1
+270           Brandy Fluker Oakley—Christine Barber      1
+271               Brandy Fluker Oakley—Danillo Sena      1
+272              Brandy Fluker Oakley—David LeBoeuf      1
+273          Brandy Fluker Oakley—David Paul Linsky      1
+274               Brandy Fluker Oakley—David Rogers      1
+275            Brandy Fluker Oakley—Dylan Fernandes      1
+276         Brandy Fluker Oakley—Harriette Chandler      1
+277         Brandy Fluker Oakley—Jack Patrick Lewis      1
+278             Brandy Fluker Oakley—Jacob Oliveira      1
+279                Brandy Fluker Oakley—James O'Day      1
+280                  Brandy Fluker Oakley—Kip Diggs      1
+281            Brandy Fluker Oakley—Linday Sabadosa      1
+282                Brandy Fluker Oakley—Liz Miranda      1
+283               Brandy Fluker Oakley—Lori Ehrlich      1
+284              Brandy Fluker Oakley—Marcos Devers      1
+285               Brandy Fluker Oakley—Maria Duaime      1
+286            Brandy Fluker Oakley—Mathew Muratore      1
+287           Brandy Fluker Oakley—Michelle Ciccolo      1
+288            Brandy Fluker Oakley—Michelle DuBois      1
+289            Brandy Fluker Oakley—Natalie Higgins      1
+290             Brandy Fluker Oakley—Patricia Duffy      1
+291            Brandy Fluker Oakley—Patricia Haddad      1
+292                Brandy Fluker Oakley—Paul Donato      1
+293                   Brandy Fluker Oakley—Rady Mom      1
+294                Brandy Fluker Oakley—Ruth Balser      1
+295               Brandy Fluker Oakley—Steven Owens      1
+296             Brandy Fluker Oakley—Steven Ultrino      1
+297                Brandy Fluker Oakley—Tackey Chan      1
+298               Brandy Fluker Oakley—Tami Gouveia      1
+299                Brandy Fluker Oakley—Tram Nguyen      1
+300      Brandy Fluker Oakley—Tricia Farley-Bouvier      1
+301               Brandy Fluker Oakley—Vanna Howard      1
+302                         Brian Ashe—Brian Murray      1
+303                        Brian Ashe—Carol Doherty      1
+304                         Brian Ashe—Danillo Sena      1
+305                       Brian Ashe—Edward Philips      1
+306                      Brian Ashe—Elizabeth Malia      1
+307                           Brian Ashe—Jack Lewis      1
+308                        Brian Ashe—James Hawkins      1
+309                     Brian Ashe—Jonathan Zlotnik      1
+310                          Brian Ashe—Josh Cutler      1
+311               Brian Ashe—Kate Lipper-Garabedian      1
+312                     Brian Ashe—Kathleen LaNatra      1
+313                     Brian Ashe—Lindsay Sabadosa      1
+314                        Brian Ashe—Marcos Devers      1
+315                    Brian Ashe—Michael Kushmerek      1
+316                      Brian Ashe—Patrick Kearney      1
+317                          Brian Ashe—Paul Tucker      1
+318                         Brian Ashe—Steven Owens      1
+319                       Brian Ashe—Steven Xiarhos      1
+320                      Brian Ashe—Susannah Whipps      1
+321                         Brian Ashe—Tami Gouveia      1
+322                         Brian Ashe—Vanna Howard      1
+323                        Brian Murray—Bruce Ayers      1
+324                      Brian Murray—Carol Doherty      1
+325                       Brian Murray—Danillo Sena      1
+326                     Brian Murray—Edward Philips      1
+327                    Brian Murray—Elizabeth Malia      1
+328                         Brian Murray—Jack Lewis      1
+329                      Brian Murray—James Hawkins      1
+330                   Brian Murray—Jonathan Zlotnik      1
+331                        Brian Murray—Josh Cutler      1
+332             Brian Murray—Kate Lipper-Garabedian      1
+333                   Brian Murray—Kathleen LaNatra      1
+334                   Brian Murray—Lindsay Sabadosa      1
+335                      Brian Murray—Marcos Devers      1
+336                  Brian Murray—Michael Kushmerek      1
+337                    Brian Murray—Patrick Kearney      1
+338                        Brian Murray—Paul Tucker      1
+339                       Brian Murray—Steven Owens      1
+340                     Brian Murray—Steven Xiarhos      1
+341                    Brian Murray—Susannah Whipps      1
+342                       Brian Murray—Tami Gouveia      1
+343                       Brian Murray—Vanna Howard      1
+344        Bud Williams—David Henry Argosky LeBoeuf      1
+345                      Bud Williams—James Arciero      1
+346                 Bud Williams—James Arena-DeRosa      1
+347                   Bud Williams—Lindsay Sabadosa      1
+348                    Bud Williams—Michelle DuBois      1
+349                      Bud Williams—Paul McMurtry      1
+350                        Bud Williams—Tackey Chan      1
+351                 Carlos González—Carmine Gentile      1
+352                   Carlos González—Carol Doherty      1
+353                    Carlos González—Carole Fiola      1
+354                  Carlos González—Carolyn Dykema      1
+355             Carlos González—Christina Minicucci      2
+356                Carlos González—Christine Barber      2
+357                     Carlos González—Daniel Ryan      1
+358                    Carlos González—Danillo Sena      2
+359                   Carlos González—David LeBoeuf      2
+360               Carlos González—David Paul Linsky      1
+361                    Carlos González—David Rogers      2
+362                 Carlos González—Dylan Fernandes      2
+363                 Carlos González—Elizabeth Malia      1
+364               Carlos González—Erika Uyterhoeven      1
+365                  Carlos González—Gerard Cassidy      1
+366              Carlos González—Harriette Chandler      1
+367                      Carlos González—Jack Lewis      1
+368              Carlos González—Jack Patrick Lewis      1
+369                  Carlos González—Jacob Oliveira      2
+370                     Carlos González—James O'Day      1
+371                Carlos González—Jessica Giannino      1
+372                   Carlos González—Joan Meschino      1
+373                    Carlos González—Jon Santiago      1
+374                Carlos González—Joseph McGonagle      1
+375                        Carlos González—Kay Khan      1
+376                       Carlos González—Kip Diggs      1
+377                 Carlos González—Linday Sabadosa      1
+378                Carlos González—Lindsay Sabadosa      1
+379                     Carlos González—Liz Miranda      1
+380                    Carlos González—Lori Ehrlich      1
+381                   Carlos González—Marcos Devers      1
+382                    Carlos González—Maria Duaime      1
+383                  Carlos González—Maria Robinson      1
+384                 Carlos González—Marjorie Decker      1
+385                      Carlos González—Mary Keefe      1
+386                 Carlos González—Mathew Muratore      1
+387               Carlos González—Michael Kushmerek      1
+388                Carlos González—Michelle Ciccolo      2
+389                 Carlos González—Michelle DuBois      1
+390                      Carlos González—Mindy Domb      1
+391                 Carlos González—Natalie Higgins      2
+392                   Carlos González—Nika Elugardo      1
+393                  Carlos González—Patricia Duffy      2
+394                 Carlos González—Patricia Haddad      1
+395                     Carlos González—Paul Donato      2
+396                    Carlos González—Peter Capano      1
+397                        Carlos González—Rady Mom      1
+398                     Carlos González—Ruth Balser      2
+399                  Carlos González—Sean Garballey      1
+400                    Carlos González—Steven Owens      2
+401                  Carlos González—Steven Ultrino      2
+402                     Carlos González—Tackey Chan      1
+403                    Carlos González—Tami Gouveia      2
+404                    Carlos González—Tommy Vitolo      1
+405                     Carlos González—Tram Nguyen      2
+406           Carlos González—Tricia Farley-Bouvier      2
+407                    Carlos González—Vanna Howard      2
+408                  Carlos González—William Galvin      1
+409                   Carmine Gentile—Carol Doherty      1
+410                    Carmine Gentile—Carole Fiola      1
+411             Carmine Gentile—Christina Minicucci      1
+412                Carmine Gentile—Christine Barber      1
+413           Carmine Gentile—Christopher Hendricks      1
+414                     Carmine Gentile—Daniel Ryan      1
+415                    Carmine Gentile—Danillo Sena      1
+416                   Carmine Gentile—David LeBoeuf      1
+417                    Carmine Gentile—David Rogers      1
+418                 Carmine Gentile—Dylan Fernandes      1
+419                 Carmine Gentile—Elizabeth Malia      2
+420               Carmine Gentile—Erika Uyterhoeven      1
+421                  Carmine Gentile—Gerard Cassidy      1
+422                      Carmine Gentile—Jack Lewis      1
+423                  Carmine Gentile—Jacob Oliveira      1
+424                     Carmine Gentile—James O'Day      1
+425                Carmine Gentile—Jessica Giannino      1
+426                   Carmine Gentile—Joan Meschino      1
+427                    Carmine Gentile—Jon Santiago      1
+428                Carmine Gentile—Joseph McGonagle      1
+429                        Carmine Gentile—Kay Khan      1
+430                Carmine Gentile—Lindsay Sabadosa      2
+431                  Carmine Gentile—Maria Robinson      1
+432                 Carmine Gentile—Marjorie Decker      1
+433                      Carmine Gentile—Mary Keefe      1
+434               Carmine Gentile—Michael Kushmerek      2
+435                Carmine Gentile—Michelle Ciccolo      2
+436                 Carmine Gentile—Michelle DuBois      1
+437                      Carmine Gentile—Mindy Domb      1
+438                 Carmine Gentile—Natalie Higgins      1
+439                   Carmine Gentile—Nika Elugardo      1
+440                  Carmine Gentile—Patricia Duffy      1
+441                     Carmine Gentile—Paul Donato      1
+442                     Carmine Gentile—Paul Schmid      1
+443                    Carmine Gentile—Peter Capano      1
+444                     Carmine Gentile—Ruth Balser      1
+445                  Carmine Gentile—Sean Garballey      1
+446                    Carmine Gentile—Steven Owens      2
+447                  Carmine Gentile—Steven Ultrino      1
+448                    Carmine Gentile—Tami Gouveia      2
+449                    Carmine Gentile—Tommy Vitolo      1
+450                     Carmine Gentile—Tram Nguyen      2
+451           Carmine Gentile—Tricia Farley-Bouvier      1
+452                    Carmine Gentile—Vanna Howard      1
+453                  Carmine Gentile—William Galvin      2
+454                      Carol Doherty—Carole Fiola      2
+455                    Carol Doherty—Carolyn Dykema      1
+456               Carol Doherty—Christina Minicucci      2
+457                  Carol Doherty—Christine Barber      1
+458             Carol Doherty—Christopher Hendricks      2
+459                      Carol Doherty—Chynah Tyler      1
+460                      Carol Doherty—Danillo Sena      3
+461                     Carol Doherty—David DeCoste      1
+462                     Carol Doherty—David LeBoeuf      1
+463                 Carol Doherty—David Paul Linsky      1
+464                   Carol Doherty—David Robertson      1
+465                      Carol Doherty—David Rogers      1
+466                      Carol Doherty—David Vieira      1
+467                 Carol Doherty—Donald Berthiaume      1
+468                   Carol Doherty—Dylan Fernandes      2
+469                    Carol Doherty—Edward Philips      1
+470                   Carol Doherty—Elizabeth Malia      3
+471                Carol Doherty—Harriette Chandler      1
+472                        Carol Doherty—Jack Lewis      1
+473                Carol Doherty—Jack Patrick Lewis      1
+474                    Carol Doherty—Jacob Oliveira      1
+475                     Carol Doherty—James Hawkins      1
+476                       Carol Doherty—James O'Day      2
+477                  Carol Doherty—Jonathan Zlotnik      1
+478                    Carol Doherty—Joseph Kearney      1
+479                    Carol Doherty—Joseph McKenna      1
+480                       Carol Doherty—Josh Cutler      1
+481            Carol Doherty—Kate Lipper-Garabedian      1
+482                  Carol Doherty—Kathleen LaNatra      1
+483                         Carol Doherty—Kip Diggs      1
+484                   Carol Doherty—Linday Sabadosa      1
+485                  Carol Doherty—Lindsay Sabadosa      3
+486                       Carol Doherty—Liz Miranda      1
+487                      Carol Doherty—Lori Ehrlich      1
+488                     Carol Doherty—Marcos Devers      2
+489                      Carol Doherty—Maria Duaime      1
+490                        Carol Doherty—Mary Keefe      1
+491                   Carol Doherty—Mathew Muratore      2
+492                 Carol Doherty—Michael Kushmerek      2
+493                     Carol Doherty—Michael Soter      1
+494                  Carol Doherty—Michelle Ciccolo      2
+495                   Carol Doherty—Michelle DuBois      3
+496                   Carol Doherty—Natalie Higgins      1
+497                    Carol Doherty—Patricia Duffy      1
+498                   Carol Doherty—Patricia Haddad      1
+499                   Carol Doherty—Patrick Kearney      1
+500                       Carol Doherty—Paul Donato      1
+501                       Carol Doherty—Paul Schmid      1
+502                       Carol Doherty—Paul Tucker      1
+503                      Carol Doherty—Peter Capano      1
+504                          Carol Doherty—Rady Mom      1
+505                       Carol Doherty—Ruth Balser      1
+506                      Carol Doherty—Shawn Dooley      1
+507                     Carol Doherty—Steven Howitt      1
+508                      Carol Doherty—Steven Owens      3
+509                    Carol Doherty—Steven Ultrino      1
+510                    Carol Doherty—Steven Xiarhos      1
+511                   Carol Doherty—Susannah Whipps      1
+512                       Carol Doherty—Tackey Chan      1
+513                      Carol Doherty—Tami Gouveia      4
+514                       Carol Doherty—Tram Nguyen      3
+515             Carol Doherty—Tricia Farley-Bouvier      1
+516                      Carol Doherty—Vanna Howard      2
+517                    Carol Doherty—William Galvin      1
+518                     Carole Fiola—Carolyn Dykema      1
+519                Carole Fiola—Christina Minicucci      1
+520                   Carole Fiola—Christine Barber      1
+521              Carole Fiola—Christopher Hendricks      1
+522                       Carole Fiola—Danillo Sena      1
+523                      Carole Fiola—David LeBoeuf      1
+524                  Carole Fiola—David Paul Linsky      1
+525                       Carole Fiola—David Rogers      1
+526                    Carole Fiola—Dylan Fernandes      1
+527                    Carole Fiola—Elizabeth Malia      1
+528                 Carole Fiola—Harriette Chandler      1
+529                 Carole Fiola—Jack Patrick Lewis      1
+530                     Carole Fiola—Jacob Oliveira      1
+531                        Carole Fiola—James O'Day      2
+532                          Carole Fiola—Kip Diggs      1
+533                    Carole Fiola—Linday Sabadosa      1
+534                   Carole Fiola—Lindsay Sabadosa      1
+535                        Carole Fiola—Liz Miranda      1
+536                       Carole Fiola—Lori Ehrlich      1
+537                      Carole Fiola—Marcos Devers      1
+538                       Carole Fiola—Maria Duaime      1
+539                    Carole Fiola—Mathew Muratore      1
+540                  Carole Fiola—Michael Kushmerek      1
+541                   Carole Fiola—Michelle Ciccolo      2
+542                    Carole Fiola—Michelle DuBois      2
+543                    Carole Fiola—Natalie Higgins      1
+544                     Carole Fiola—Patricia Duffy      1
+545                    Carole Fiola—Patricia Haddad      1
+546                        Carole Fiola—Paul Donato      1
+547                        Carole Fiola—Paul Schmid      1
+548                           Carole Fiola—Rady Mom      1
+549                        Carole Fiola—Ruth Balser      1
+550                       Carole Fiola—Steven Owens      2
+551                     Carole Fiola—Steven Ultrino      1
+552                        Carole Fiola—Tackey Chan      1
+553                       Carole Fiola—Tami Gouveia      2
+554                        Carole Fiola—Tram Nguyen      2
+555              Carole Fiola—Tricia Farley-Bouvier      1
+556                       Carole Fiola—Vanna Howard      1
+557                     Carole Fiola—William Galvin      1
+558              Carolyn Dykema—Christina Minicucci      1
+559                 Carolyn Dykema—Christine Barber      1
+560                     Carolyn Dykema—Danillo Sena      1
+561                    Carolyn Dykema—David LeBoeuf      1
+562                Carolyn Dykema—David Paul Linsky      1
+563                     Carolyn Dykema—David Rogers      1
+564                  Carolyn Dykema—Dylan Fernandes      1
+565               Carolyn Dykema—Harriette Chandler      1
+566               Carolyn Dykema—Jack Patrick Lewis      1
+567                   Carolyn Dykema—Jacob Oliveira      1
+568                      Carolyn Dykema—James O'Day      1
+569                        Carolyn Dykema—Kip Diggs      1
+570                  Carolyn Dykema—Linday Sabadosa      1
+571                      Carolyn Dykema—Liz Miranda      1
+572                     Carolyn Dykema—Lori Ehrlich      1
+573                    Carolyn Dykema—Marcos Devers      1
+574                     Carolyn Dykema—Maria Duaime      1
+575                  Carolyn Dykema—Mathew Muratore      1
+576                 Carolyn Dykema—Michelle Ciccolo      1
+577                  Carolyn Dykema—Michelle DuBois      1
+578                  Carolyn Dykema—Natalie Higgins      1
+579                   Carolyn Dykema—Patricia Duffy      1
+580                  Carolyn Dykema—Patricia Haddad      1
+581                      Carolyn Dykema—Paul Donato      1
+582                         Carolyn Dykema—Rady Mom      1
+583                      Carolyn Dykema—Ruth Balser      1
+584                     Carolyn Dykema—Steven Owens      1
+585                   Carolyn Dykema—Steven Ultrino      1
+586                      Carolyn Dykema—Tackey Chan      1
+587                     Carolyn Dykema—Tami Gouveia      1
+588                      Carolyn Dykema—Tram Nguyen      1
+589            Carolyn Dykema—Tricia Farley-Bouvier      1
+590                     Carolyn Dykema—Vanna Howard      1
+591            Christina Minicucci—Christine Barber      2
+592       Christina Minicucci—Christopher Hendricks      1
+593                Christina Minicucci—Chynah Tyler      1
+594                 Christina Minicucci—Daniel Ryan      1
+595                Christina Minicucci—Danillo Sena      3
+596               Christina Minicucci—David DeCoste      1
+597               Christina Minicucci—David LeBoeuf      2
+598           Christina Minicucci—David Paul Linsky      1
+599             Christina Minicucci—David Robertson      1
+600                Christina Minicucci—David Rogers      2
+601                Christina Minicucci—David Vieira      1
+602           Christina Minicucci—Donald Berthiaume      1
+603             Christina Minicucci—Dylan Fernandes      3
+604             Christina Minicucci—Elizabeth Malia      2
+605           Christina Minicucci—Erika Uyterhoeven      1
+606              Christina Minicucci—Gerard Cassidy      1
+607          Christina Minicucci—Harriette Chandler      1
+608                  Christina Minicucci—Jack Lewis      1
+609          Christina Minicucci—Jack Patrick Lewis      1
+610              Christina Minicucci—Jacob Oliveira      2
+611                 Christina Minicucci—James O'Day      1
+612               Christina Minicucci—Jamie Belsito      1
+613            Christina Minicucci—Jessica Giannino      1
+614               Christina Minicucci—Joan Meschino      1
+615                Christina Minicucci—Jon Santiago      1
+616              Christina Minicucci—Joseph Kearney      1
+617            Christina Minicucci—Joseph McGonagle      1
+618              Christina Minicucci—Joseph McKenna      1
+619                    Christina Minicucci—Kay Khan      2
+620                   Christina Minicucci—Kip Diggs      1
+621             Christina Minicucci—Linday Sabadosa      1
+622            Christina Minicucci—Lindsay Sabadosa      4
+623                 Christina Minicucci—Liz Miranda      1
+624                Christina Minicucci—Lori Ehrlich      1
+625               Christina Minicucci—Marcos Devers      2
+626                Christina Minicucci—Maria Duaime      1
+627              Christina Minicucci—Maria Robinson      1
+628             Christina Minicucci—Marjorie Decker      2
+629                  Christina Minicucci—Mary Keefe      2
+630             Christina Minicucci—Mathew Muratore      3
+631           Christina Minicucci—Michael Kushmerek      1
+632               Christina Minicucci—Michael Soter      1
+633            Christina Minicucci—Michelle Ciccolo      3
+634             Christina Minicucci—Michelle DuBois      3
+635                  Christina Minicucci—Mindy Domb      1
+636             Christina Minicucci—Natalie Higgins      4
+637               Christina Minicucci—Nika Elugardo      2
+638              Christina Minicucci—Patricia Duffy      2
+639             Christina Minicucci—Patricia Haddad      1
+640                 Christina Minicucci—Paul Donato      2
+641                Christina Minicucci—Peter Capano      2
+642                    Christina Minicucci—Rady Mom      1
+643                 Christina Minicucci—Ruth Balser      2
+644              Christina Minicucci—Sal DiDomenico      1
+645              Christina Minicucci—Sean Garballey      2
+646                Christina Minicucci—Shawn Dooley      1
+647               Christina Minicucci—Steven Howitt      1
+648                Christina Minicucci—Steven Owens      3
+649              Christina Minicucci—Steven Ultrino      2
+650             Christina Minicucci—Susannah Whipps      1
+651                 Christina Minicucci—Tackey Chan      1
+652                Christina Minicucci—Tami Gouveia      3
+653                Christina Minicucci—Tommy Vitolo      1
+654                 Christina Minicucci—Tram Nguyen      4
+655       Christina Minicucci—Tricia Farley-Bouvier      2
+656                Christina Minicucci—Vanna Howard      2
+657              Christina Minicucci—William Galvin      1
+658                    Christine Barber—Daniel Ryan      1
+659                   Christine Barber—Danillo Sena      2
+660                  Christine Barber—David LeBoeuf      2
+661              Christine Barber—David Paul Linsky      1
+662                   Christine Barber—David Rogers      2
+663                Christine Barber—Dylan Fernandes      2
+664                Christine Barber—Elizabeth Malia      1
+665              Christine Barber—Erika Uyterhoeven      1
+666                 Christine Barber—Gerard Cassidy      1
+667             Christine Barber—Harriette Chandler      1
+668                     Christine Barber—Jack Lewis      1
+669             Christine Barber—Jack Patrick Lewis      1
+670                 Christine Barber—Jacob Oliveira      2
+671                    Christine Barber—James O'Day      1
+672               Christine Barber—Jessica Giannino      1
+673                  Christine Barber—Joan Meschino      1
+674                   Christine Barber—Jon Santiago      1
+675               Christine Barber—Joseph McGonagle      1
+676                       Christine Barber—Kay Khan      1
+677                      Christine Barber—Kip Diggs      1
+678                Christine Barber—Linday Sabadosa      1
+679               Christine Barber—Lindsay Sabadosa      1
+680                    Christine Barber—Liz Miranda      1
+681                   Christine Barber—Lori Ehrlich      1
+682                  Christine Barber—Marcos Devers      1
+683                   Christine Barber—Maria Duaime      1
+684                 Christine Barber—Maria Robinson      1
+685                Christine Barber—Marjorie Decker      1
+686                     Christine Barber—Mary Keefe      1
+687                Christine Barber—Mathew Muratore      1
+688              Christine Barber—Michael Kushmerek      1
+689               Christine Barber—Michelle Ciccolo      2
+690                Christine Barber—Michelle DuBois      1
+691                     Christine Barber—Mindy Domb      1
+692                Christine Barber—Natalie Higgins      2
+693                  Christine Barber—Nika Elugardo      1
+694                 Christine Barber—Patricia Duffy      2
+695                Christine Barber—Patricia Haddad      1
+696                    Christine Barber—Paul Donato      2
+697                   Christine Barber—Peter Capano      1
+698                       Christine Barber—Rady Mom      1
+699                    Christine Barber—Ruth Balser      2
+700                 Christine Barber—Sean Garballey      1
+701                   Christine Barber—Steven Owens      2
+702                 Christine Barber—Steven Ultrino      2
+703                    Christine Barber—Tackey Chan      1
+704                   Christine Barber—Tami Gouveia      2
+705                   Christine Barber—Tommy Vitolo      1
+706                    Christine Barber—Tram Nguyen      2
+707          Christine Barber—Tricia Farley-Bouvier      2
+708                   Christine Barber—Vanna Howard      2
+709                 Christine Barber—William Galvin      1
+710              Christopher Hendricks—Chynah Tyler      1
+711              Christopher Hendricks—Danillo Sena      1
+712             Christopher Hendricks—David DeCoste      1
+713           Christopher Hendricks—David Robertson      1
+714              Christopher Hendricks—David Vieira      1
+715         Christopher Hendricks—Donald Berthiaume      1
+716           Christopher Hendricks—Dylan Fernandes      1
+717           Christopher Hendricks—Elizabeth Malia      2
+718               Christopher Hendricks—James O'Day      1
+719            Christopher Hendricks—Joseph Kearney      1
+720            Christopher Hendricks—Joseph McKenna      1
+721          Christopher Hendricks—Lindsay Sabadosa      2
+722                Christopher Hendricks—Mary Keefe      1
+723           Christopher Hendricks—Mathew Muratore      1
+724         Christopher Hendricks—Michael Kushmerek      1
+725             Christopher Hendricks—Michael Soter      1
+726          Christopher Hendricks—Michelle Ciccolo      1
+727           Christopher Hendricks—Michelle DuBois      2
+728               Christopher Hendricks—Paul Schmid      1
+729              Christopher Hendricks—Peter Capano      1
+730              Christopher Hendricks—Shawn Dooley      1
+731             Christopher Hendricks—Steven Howitt      1
+732              Christopher Hendricks—Steven Owens      1
+733              Christopher Hendricks—Tami Gouveia      2
+734               Christopher Hendricks—Tram Nguyen      2
+735            Christopher Hendricks—William Galvin      1
+736                       Chynah Tyler—Danillo Sena      1
+737                      Chynah Tyler—David DeCoste      1
+738                    Chynah Tyler—David Robertson      1
+739                       Chynah Tyler—David Vieira      1
+740                  Chynah Tyler—Donald Berthiaume      1
+741                    Chynah Tyler—Dylan Fernandes      1
+742                    Chynah Tyler—Elizabeth Malia      1
+743                         Chynah Tyler—Jack Lewis      1
+744                     Chynah Tyler—Joseph Kearney      1
+745                     Chynah Tyler—Joseph McKenna      1
+746                           Chynah Tyler—Kay Khan      1
+747                   Chynah Tyler—Lindsay Sabadosa      2
+748                        Chynah Tyler—Liz Miranda      1
+749                      Chynah Tyler—Marcos Devers      1
+750                         Chynah Tyler—Mary Keefe      1
+751                    Chynah Tyler—Mathew Muratore      1
+752                      Chynah Tyler—Michael Soter      1
+753                    Chynah Tyler—Michelle DuBois      1
+754                      Chynah Tyler—Nika Elugardo      1
+755                       Chynah Tyler—Peter Capano      1
+756                       Chynah Tyler—Shawn Dooley      1
+757                      Chynah Tyler—Steven Howitt      1
+758                       Chynah Tyler—Tami Gouveia      1
+759                        Chynah Tyler—Tram Nguyen      1
+760             Colleen Garry—David Allen Robertson      1
+761                     Colleen Garry—David DeCoste      1
+762                  Colleen Garry—Jessica Giannino      1
+763                    Colleen Garry—Steven Xiarhos      1
+764                     Daniel Cahill—Steven Howitt      1
+765                        Daniel Ryan—Danillo Sena      1
+766                       Daniel Ryan—David LeBoeuf      1
+767                        Daniel Ryan—David Rogers      1
+768                     Daniel Ryan—Dylan Fernandes      1
+769                     Daniel Ryan—Elizabeth Malia      1
+770                   Daniel Ryan—Erika Uyterhoeven      1
+771                      Daniel Ryan—Gerard Cassidy      1
+772                          Daniel Ryan—Jack Lewis      1
+773                      Daniel Ryan—Jacob Oliveira      1
+774                    Daniel Ryan—Jessica Giannino      1
+775                       Daniel Ryan—Joan Meschino      1
+776                        Daniel Ryan—Jon Santiago      1
+777                    Daniel Ryan—Joseph McGonagle      1
+778                            Daniel Ryan—Kay Khan      1
+779                    Daniel Ryan—Lindsay Sabadosa      1
+780                      Daniel Ryan—Maria Robinson      1
+781                     Daniel Ryan—Marjorie Decker      1
+782                          Daniel Ryan—Mary Keefe      1
+783                   Daniel Ryan—Michael Kushmerek      1
+784                    Daniel Ryan—Michelle Ciccolo      1
+785                          Daniel Ryan—Mindy Domb      1
+786                     Daniel Ryan—Natalie Higgins      1
+787                       Daniel Ryan—Nika Elugardo      1
+788                      Daniel Ryan—Patricia Duffy      1
+789                         Daniel Ryan—Paul Donato      1
+790                        Daniel Ryan—Peter Capano      1
+791                         Daniel Ryan—Ruth Balser      1
+792                      Daniel Ryan—Sean Garballey      1
+793                        Daniel Ryan—Steven Owens      1
+794                      Daniel Ryan—Steven Ultrino      1
+795                        Daniel Ryan—Tami Gouveia      1
+796                        Daniel Ryan—Tommy Vitolo      1
+797                         Daniel Ryan—Tram Nguyen      1
+798               Daniel Ryan—Tricia Farley-Bouvier      1
+799                        Daniel Ryan—Vanna Howard      1
+800                      Daniel Ryan—William Galvin      1
+801                      Danillo Sena—David DeCoste      1
+802                      Danillo Sena—David LeBoeuf      2
+803                  Danillo Sena—David Paul Linsky      1
+804                    Danillo Sena—David Robertson      1
+805                       Danillo Sena—David Rogers      2
+806                       Danillo Sena—David Vieira      1
+807                  Danillo Sena—Donald Berthiaume      1
+808                    Danillo Sena—Dylan Fernandes      3
+809                     Danillo Sena—Edward Philips      1
+810                    Danillo Sena—Elizabeth Malia      3
+811                  Danillo Sena—Erika Uyterhoeven      1
+812                     Danillo Sena—Gerard Cassidy      1
+813                 Danillo Sena—Harriette Chandler      1
+814                         Danillo Sena—Jack Lewis      2
+815                 Danillo Sena—Jack Patrick Lewis      1
+816                     Danillo Sena—Jacob Oliveira      2
+817                      Danillo Sena—James Hawkins      1
+818                        Danillo Sena—James O'Day      1
+819                   Danillo Sena—Jessica Giannino      1
+820                      Danillo Sena—Joan Meschino      1
+821                       Danillo Sena—Jon Santiago      1
+822                   Danillo Sena—Jonathan Zlotnik      1
+823                     Danillo Sena—Joseph Kearney      1
+824                   Danillo Sena—Joseph McGonagle      1
+825                     Danillo Sena—Joseph McKenna      1
+826                        Danillo Sena—Josh Cutler      1
+827             Danillo Sena—Kate Lipper-Garabedian      1
+828                   Danillo Sena—Kathleen LaNatra      1
+829                           Danillo Sena—Kay Khan      1
+830                          Danillo Sena—Kip Diggs      1
+831                    Danillo Sena—Linday Sabadosa      1
+832                   Danillo Sena—Lindsay Sabadosa      3
+833                        Danillo Sena—Liz Miranda      1
+834                       Danillo Sena—Lori Ehrlich      1
+835                      Danillo Sena—Marcos Devers      2
+836                       Danillo Sena—Maria Duaime      1
+837                     Danillo Sena—Maria Robinson      1
+838                    Danillo Sena—Marjorie Decker      1
+839                         Danillo Sena—Mary Keefe      2
+840                    Danillo Sena—Mathew Muratore      2
+841                  Danillo Sena—Michael Kushmerek      2
+842                      Danillo Sena—Michael Soter      1
+843                   Danillo Sena—Michelle Ciccolo      2
+844                    Danillo Sena—Michelle DuBois      2
+845                         Danillo Sena—Mindy Domb      1
+846                    Danillo Sena—Natalie Higgins      2
+847                      Danillo Sena—Nika Elugardo      1
+848                     Danillo Sena—Patricia Duffy      2
+849                    Danillo Sena—Patricia Haddad      1
+850                    Danillo Sena—Patrick Kearney      1
+851                        Danillo Sena—Paul Donato      2
+852                        Danillo Sena—Paul Tucker      1
+853                       Danillo Sena—Peter Capano      2
+854                           Danillo Sena—Rady Mom      1
+855                        Danillo Sena—Ruth Balser      2
+856                     Danillo Sena—Sean Garballey      1
+857                       Danillo Sena—Shawn Dooley      1
+858                      Danillo Sena—Steven Howitt      1
+859                       Danillo Sena—Steven Owens      3
+860                     Danillo Sena—Steven Ultrino      2
+861                     Danillo Sena—Steven Xiarhos      1
+862                    Danillo Sena—Susannah Whipps      1
+863                        Danillo Sena—Tackey Chan      1
+864                       Danillo Sena—Tami Gouveia      4
+865                       Danillo Sena—Tommy Vitolo      1
+866                        Danillo Sena—Tram Nguyen      3
+867              Danillo Sena—Tricia Farley-Bouvier      2
+868                       Danillo Sena—Vanna Howard      3
+869                     Danillo Sena—William Galvin      1
+870                   David DeCoste—David Robertson      1
+871                      David DeCoste—David Vieira      1
+872                 David DeCoste—Donald Berthiaume      1
+873                   David DeCoste—Dylan Fernandes      1
+874                   David DeCoste—Elizabeth Malia      1
+875                  David DeCoste—Jessica Giannino      1
+876                    David DeCoste—Joseph Kearney      1
+877                    David DeCoste—Joseph McKenna      1
+878                  David DeCoste—Lindsay Sabadosa      1
+879                        David DeCoste—Mary Keefe      1
+880                   David DeCoste—Mathew Muratore      1
+881                     David DeCoste—Michael Soter      1
+882                   David DeCoste—Michelle DuBois      1
+883                      David DeCoste—Peter Capano      1
+884                      David DeCoste—Shawn Dooley      1
+885                     David DeCoste—Steven Howitt      1
+886                    David DeCoste—Steven Xiarhos      1
+887                      David DeCoste—Tami Gouveia      1
+888                       David DeCoste—Tram Nguyen      1
+889       David Henry Argosky LeBoeuf—James Arciero      1
+890  David Henry Argosky LeBoeuf—James Arena-DeRosa      1
+891    David Henry Argosky LeBoeuf—Lindsay Sabadosa      1
+892     David Henry Argosky LeBoeuf—Michelle DuBois      1
+893       David Henry Argosky LeBoeuf—Paul McMurtry      1
+894         David Henry Argosky LeBoeuf—Tackey Chan      1
+895                 David LeBoeuf—David Paul Linsky      1
+896                      David LeBoeuf—David Rogers      2
+897                   David LeBoeuf—Dylan Fernandes      2
+898                   David LeBoeuf—Elizabeth Malia      1
+899                 David LeBoeuf—Erika Uyterhoeven      1
+900                    David LeBoeuf—Gerard Cassidy      1
+901                David LeBoeuf—Harriette Chandler      1
+902                        David LeBoeuf—Jack Lewis      1
+903                David LeBoeuf—Jack Patrick Lewis      1
+904                    David LeBoeuf—Jacob Oliveira      2
+905                       David LeBoeuf—James O'Day      1
+906                  David LeBoeuf—Jessica Giannino      1
+907                     David LeBoeuf—Joan Meschino      1
+908                      David LeBoeuf—Jon Santiago      1
+909                  David LeBoeuf—Joseph McGonagle      1
+910                          David LeBoeuf—Kay Khan      1
+911                         David LeBoeuf—Kip Diggs      1
+912                   David LeBoeuf—Linday Sabadosa      1
+913                  David LeBoeuf—Lindsay Sabadosa      1
+914                       David LeBoeuf—Liz Miranda      1
+915                      David LeBoeuf—Lori Ehrlich      1
+916                     David LeBoeuf—Marcos Devers      1
+917                      David LeBoeuf—Maria Duaime      1
+918                    David LeBoeuf—Maria Robinson      1
+919                   David LeBoeuf—Marjorie Decker      1
+920                        David LeBoeuf—Mary Keefe      1
+921                   David LeBoeuf—Mathew Muratore      1
+922                 David LeBoeuf—Michael Kushmerek      1
+923                  David LeBoeuf—Michelle Ciccolo      2
+924                   David LeBoeuf—Michelle DuBois      1
+925                        David LeBoeuf—Mindy Domb      1
+926                   David LeBoeuf—Natalie Higgins      2
+927                     David LeBoeuf—Nika Elugardo      1
+928                    David LeBoeuf—Patricia Duffy      2
+929                   David LeBoeuf—Patricia Haddad      1
+930                       David LeBoeuf—Paul Donato      2
+931                      David LeBoeuf—Peter Capano      1
+932                          David LeBoeuf—Rady Mom      1
+933                       David LeBoeuf—Ruth Balser      2
+934                    David LeBoeuf—Sean Garballey      1
+935                      David LeBoeuf—Steven Owens      2
+936                    David LeBoeuf—Steven Ultrino      2
+937                       David LeBoeuf—Tackey Chan      1
+938                      David LeBoeuf—Tami Gouveia      2
+939                      David LeBoeuf—Tommy Vitolo      1
+940                       David LeBoeuf—Tram Nguyen      2
+941             David LeBoeuf—Tricia Farley-Bouvier      2
+942                      David LeBoeuf—Vanna Howard      2
+943                    David LeBoeuf—William Galvin      1
+944                  David Paul Linsky—David Rogers      1
+945               David Paul Linsky—Dylan Fernandes      1
+946            David Paul Linsky—Harriette Chandler      1
+947            David Paul Linsky—Jack Patrick Lewis      1
+948                David Paul Linsky—Jacob Oliveira      1
+949                   David Paul Linsky—James O'Day      1
+950                     David Paul Linsky—Kip Diggs      1
+951               David Paul Linsky—Linday Sabadosa      1
+952                   David Paul Linsky—Liz Miranda      1
+953                  David Paul Linsky—Lori Ehrlich      1
+954                 David Paul Linsky—Marcos Devers      1
+955                  David Paul Linsky—Maria Duaime      1
+956               David Paul Linsky—Mathew Muratore      1
+957              David Paul Linsky—Michelle Ciccolo      1
+958               David Paul Linsky—Michelle DuBois      1
+959               David Paul Linsky—Natalie Higgins      1
+960                David Paul Linsky—Patricia Duffy      1
+961               David Paul Linsky—Patricia Haddad      1
+962                   David Paul Linsky—Paul Donato      1
+963                      David Paul Linsky—Rady Mom      1
+964                   David Paul Linsky—Ruth Balser      1
+965                  David Paul Linsky—Steven Owens      1
+966                David Paul Linsky—Steven Ultrino      1
+967                   David Paul Linsky—Tackey Chan      1
+968                  David Paul Linsky—Tami Gouveia      1
+969                   David Paul Linsky—Tram Nguyen      1
+970         David Paul Linsky—Tricia Farley-Bouvier      1
+971                  David Paul Linsky—Vanna Howard      1
+972                    David Robertson—David Vieira      1
+973               David Robertson—Donald Berthiaume      2
+974                 David Robertson—Dylan Fernandes      1
+975                 David Robertson—Elizabeth Malia      1
+976                  David Robertson—F. Jay Barrows      1
+977                     David Robertson—Hannah Kane      1
+978                     David Robertson—James O'Day      1
+979                  David Robertson—Joseph Kearney      1
+980                  David Robertson—Joseph McKenna      1
+981               David Robertson—Kimberly Ferguson      1
+982                David Robertson—Lindsay Sabadosa      1
+983                      David Robertson—Mary Keefe      1
+984                 David Robertson—Mathew Muratore      1
+985                   David Robertson—Michael Soter      2
+986                 David Robertson—Michelle DuBois      1
+987                   David Robertson—Natalie Blais      1
+988                 David Robertson—Natalie Higgins      1
+989                    David Robertson—Peter Capano      1
+990                    David Robertson—Shawn Dooley      1
+991               David Robertson—Sheila Harrington      1
+992                   David Robertson—Steven Howitt      2
+993                  David Robertson—Steven Ultrino      1
+994                    David Robertson—Tami Gouveia      1
+995                    David Robertson—Tommy Vitolo      1
+996                     David Robertson—Tram Nguyen      1
+997           David Robertson—Tricia Farley-Bouvier      2
+998                    David Robertson—Vanna Howard      1
+999                    David Rogers—Dylan Fernandes      2
+1000                   David Rogers—Elizabeth Malia      1
+1001                 David Rogers—Erika Uyterhoeven      1
+1002                    David Rogers—Gerard Cassidy      1
+1003                David Rogers—Harriette Chandler      1
+1004                        David Rogers—Jack Lewis      1
+1005                David Rogers—Jack Patrick Lewis      1
+1006                    David Rogers—Jacob Oliveira      2
+1007                       David Rogers—James O'Day      1
+1008                  David Rogers—Jessica Giannino      1
+1009                     David Rogers—Joan Meschino      1
+1010                      David Rogers—Jon Santiago      1
+1011                  David Rogers—Joseph McGonagle      1
+1012                          David Rogers—Kay Khan      1
+1013                         David Rogers—Kip Diggs      1
+1014                   David Rogers—Linday Sabadosa      1
+1015                  David Rogers—Lindsay Sabadosa      1
+1016                       David Rogers—Liz Miranda      1
+1017                      David Rogers—Lori Ehrlich      1
+1018                     David Rogers—Marcos Devers      1
+1019                      David Rogers—Maria Duaime      1
+1020                    David Rogers—Maria Robinson      1
+1021                   David Rogers—Marjorie Decker      1
+1022                        David Rogers—Mary Keefe      1
+1023                   David Rogers—Mathew Muratore      1
+1024                 David Rogers—Michael Kushmerek      1
+1025                  David Rogers—Michelle Ciccolo      2
+1026                   David Rogers—Michelle DuBois      1
+1027                        David Rogers—Mindy Domb      1
+1028                   David Rogers—Natalie Higgins      2
+1029                     David Rogers—Nika Elugardo      1
+1030                    David Rogers—Patricia Duffy      2
+1031                   David Rogers—Patricia Haddad      1
+1032                       David Rogers—Paul Donato      2
+1033                      David Rogers—Peter Capano      1
+1034                          David Rogers—Rady Mom      1
+1035                       David Rogers—Ruth Balser      2
+1036                    David Rogers—Sean Garballey      1
+1037                      David Rogers—Steven Owens      2
+1038                    David Rogers—Steven Ultrino      2
+1039                       David Rogers—Tackey Chan      1
+1040                      David Rogers—Tami Gouveia      2
+1041                      David Rogers—Tommy Vitolo      1
+1042                       David Rogers—Tram Nguyen      2
+1043             David Rogers—Tricia Farley-Bouvier      2
+1044                      David Rogers—Vanna Howard      2
+1045                    David Rogers—William Galvin      1
+1046                 David Vieira—Donald Berthiaume      1
+1047                   David Vieira—Dylan Fernandes      1
+1048                   David Vieira—Elizabeth Malia      1
+1049                    David Vieira—Joseph Kearney      1
+1050                    David Vieira—Joseph McKenna      1
+1051                  David Vieira—Lindsay Sabadosa      1
+1052                        David Vieira—Mary Keefe      1
+1053                   David Vieira—Mathew Muratore      1
+1054                     David Vieira—Michael Soter      1
+1055                   David Vieira—Michelle DuBois      1
+1056                      David Vieira—Peter Capano      1
+1057                      David Vieira—Shawn Dooley      1
+1058                     David Vieira—Steven Howitt      1
+1059                      David Vieira—Tami Gouveia      1
+1060                       David Vieira—Tram Nguyen      1
+1061              Donald Berthiaume—Dylan Fernandes      1
+1062              Donald Berthiaume—Elizabeth Malia      1
+1063               Donald Berthiaume—F. Jay Barrows      1
+1064                  Donald Berthiaume—Hannah Kane      1
+1065               Donald Berthiaume—Joseph Kearney      1
+1066               Donald Berthiaume—Joseph McKenna      1
+1067            Donald Berthiaume—Kimberly Ferguson      1
+1068             Donald Berthiaume—Lindsay Sabadosa      1
+1069                   Donald Berthiaume—Mary Keefe      1
+1070              Donald Berthiaume—Mathew Muratore      1
+1071                Donald Berthiaume—Michael Soter      2
+1072              Donald Berthiaume—Michelle DuBois      1
+1073                 Donald Berthiaume—Peter Capano      1
+1074                 Donald Berthiaume—Shawn Dooley      1
+1075            Donald Berthiaume—Sheila Harrington      1
+1076                Donald Berthiaume—Steven Howitt      2
+1077                 Donald Berthiaume—Tami Gouveia      1
+1078                  Donald Berthiaume—Tram Nguyen      1
+1079        Donald Berthiaume—Tricia Farley-Bouvier      1
+1080                 Donald Berthiaume—Vanna Howard      1
+1081                Dylan Fernandes—Elizabeth Malia      2
+1082              Dylan Fernandes—Erika Uyterhoeven      1
+1083                 Dylan Fernandes—Gerard Cassidy      1
+1084             Dylan Fernandes—Harriette Chandler      1
+1085                     Dylan Fernandes—Jack Lewis      1
+1086             Dylan Fernandes—Jack Patrick Lewis      1
+1087                 Dylan Fernandes—Jacob Oliveira      2
+1088                    Dylan Fernandes—James O'Day      1
+1089               Dylan Fernandes—Jessica Giannino      1
+1090                  Dylan Fernandes—Joan Meschino      1
+1091                   Dylan Fernandes—Jon Santiago      1
+1092                 Dylan Fernandes—Joseph Kearney      1
+1093               Dylan Fernandes—Joseph McGonagle      1
+1094                 Dylan Fernandes—Joseph McKenna      1
+1095                       Dylan Fernandes—Kay Khan      1
+1096                      Dylan Fernandes—Kip Diggs      1
+1097                Dylan Fernandes—Linday Sabadosa      1
+1098               Dylan Fernandes—Lindsay Sabadosa      2
+1099                    Dylan Fernandes—Liz Miranda      1
+1100                   Dylan Fernandes—Lori Ehrlich      1
+1101                  Dylan Fernandes—Marcos Devers      1
+1102                   Dylan Fernandes—Maria Duaime      1
+1103                 Dylan Fernandes—Maria Robinson      1
+1104                Dylan Fernandes—Marjorie Decker      1
+1105                     Dylan Fernandes—Mary Keefe      2
+1106                Dylan Fernandes—Mathew Muratore      2
+1107              Dylan Fernandes—Michael Kushmerek      1
+1108                  Dylan Fernandes—Michael Soter      1
+1109               Dylan Fernandes—Michelle Ciccolo      2
+1110                Dylan Fernandes—Michelle DuBois      2
+1111                     Dylan Fernandes—Mindy Domb      1
+1112                Dylan Fernandes—Natalie Higgins      2
+1113                  Dylan Fernandes—Nika Elugardo      1
+1114                 Dylan Fernandes—Patricia Duffy      2
+1115                Dylan Fernandes—Patricia Haddad      1
+1116                    Dylan Fernandes—Paul Donato      2
+1117                   Dylan Fernandes—Peter Capano      2
+1118                       Dylan Fernandes—Rady Mom      1
+1119                    Dylan Fernandes—Ruth Balser      2
+1120                    Dylan Fernandes—Sarak Peake      1
+1121                 Dylan Fernandes—Sean Garballey      1
+1122                   Dylan Fernandes—Shawn Dooley      1
+1123                  Dylan Fernandes—Steven Howitt      1
+1124                   Dylan Fernandes—Steven Owens      2
+1125                 Dylan Fernandes—Steven Ultrino      2
+1126                    Dylan Fernandes—Tackey Chan      1
+1127                   Dylan Fernandes—Tami Gouveia      3
+1128                   Dylan Fernandes—Tommy Vitolo      1
+1129                    Dylan Fernandes—Tram Nguyen      3
+1130          Dylan Fernandes—Tricia Farley-Bouvier      2
+1131                   Dylan Fernandes—Vanna Howard      2
+1132                 Dylan Fernandes—William Galvin      1
+1133                 Edward Philips—Elizabeth Malia      1
+1134                      Edward Philips—Jack Lewis      1
+1135                   Edward Philips—James Hawkins      1
+1136                Edward Philips—Jonathan Zlotnik      1
+1137                     Edward Philips—Josh Cutler      1
+1138          Edward Philips—Kate Lipper-Garabedian      1
+1139                Edward Philips—Kathleen LaNatra      1
+1140                Edward Philips—Lindsay Sabadosa      1
+1141                   Edward Philips—Marcos Devers      1
+1142               Edward Philips—Michael Kushmerek      1
+1143                 Edward Philips—Patrick Kearney      1
+1144                     Edward Philips—Paul Tucker      1
+1145                    Edward Philips—Steven Owens      1
+1146                  Edward Philips—Steven Xiarhos      1
+1147                 Edward Philips—Susannah Whipps      1
+1148                    Edward Philips—Tami Gouveia      1
+1149                    Edward Philips—Vanna Howard      1
+1150              Elizabeth Malia—Erika Uyterhoeven      1
+1151                 Elizabeth Malia—Gerard Cassidy      1
+1152                     Elizabeth Malia—Jack Lewis      2
+1153                 Elizabeth Malia—Jacob Oliveira      1
+1154                  Elizabeth Malia—James Hawkins      1
+1155                    Elizabeth Malia—James O'Day      1
+1156               Elizabeth Malia—Jessica Giannino      1
+1157                  Elizabeth Malia—Joan Meschino      1
+1158                   Elizabeth Malia—Jon Santiago      1
+1159               Elizabeth Malia—Jonathan Zlotnik      1
+1160                 Elizabeth Malia—Joseph Kearney      1
+1161               Elizabeth Malia—Joseph McGonagle      1
+1162                 Elizabeth Malia—Joseph McKenna      1
+1163                    Elizabeth Malia—Josh Cutler      1
+1164         Elizabeth Malia—Kate Lipper-Garabedian      1
+1165               Elizabeth Malia—Kathleen LaNatra      1
+1166                       Elizabeth Malia—Kay Khan      1
+1167               Elizabeth Malia—Lindsay Sabadosa      4
+1168                  Elizabeth Malia—Marcos Devers      1
+1169                 Elizabeth Malia—Maria Robinson      1
+1170                Elizabeth Malia—Marjorie Decker      1
+1171                     Elizabeth Malia—Mary Keefe      2
+1172                Elizabeth Malia—Mathew Muratore      1
+1173              Elizabeth Malia—Michael Kushmerek      3
+1174                  Elizabeth Malia—Michael Soter      1
+1175               Elizabeth Malia—Michelle Ciccolo      2
+1176                Elizabeth Malia—Michelle DuBois      2
+1177                     Elizabeth Malia—Mindy Domb      1
+1178                Elizabeth Malia—Natalie Higgins      1
+1179                  Elizabeth Malia—Nika Elugardo      1
+1180                 Elizabeth Malia—Patricia Duffy      1
+1181                Elizabeth Malia—Patrick Kearney      1
+1182                    Elizabeth Malia—Paul Donato      1
+1183                    Elizabeth Malia—Paul Schmid      1
+1184                    Elizabeth Malia—Paul Tucker      1
+1185                   Elizabeth Malia—Peter Capano      2
+1186                    Elizabeth Malia—Ruth Balser      1
+1187                 Elizabeth Malia—Sean Garballey      1
+1188                   Elizabeth Malia—Shawn Dooley      1
+1189                  Elizabeth Malia—Steven Howitt      1
+1190                   Elizabeth Malia—Steven Owens      3
+1191                 Elizabeth Malia—Steven Ultrino      1
+1192                 Elizabeth Malia—Steven Xiarhos      1
+1193                Elizabeth Malia—Susannah Whipps      1
+1194                   Elizabeth Malia—Tami Gouveia      4
+1195                   Elizabeth Malia—Tommy Vitolo      1
+1196                    Elizabeth Malia—Tram Nguyen      3
+1197          Elizabeth Malia—Tricia Farley-Bouvier      1
+1198                   Elizabeth Malia—Vanna Howard      2
+1199                 Elizabeth Malia—William Galvin      2
+1200               Erika Uyterhoeven—Gerard Cassidy      1
+1201                   Erika Uyterhoeven—Jack Lewis      1
+1202               Erika Uyterhoeven—Jacob Oliveira      1
+1203             Erika Uyterhoeven—Jessica Giannino      1
+1204                Erika Uyterhoeven—Joan Meschino      1
+1205                 Erika Uyterhoeven—Jon Santiago      1
+1206             Erika Uyterhoeven—Joseph McGonagle      1
+1207                     Erika Uyterhoeven—Kay Khan      1
+1208             Erika Uyterhoeven—Lindsay Sabadosa      1
+1209               Erika Uyterhoeven—Maria Robinson      1
+1210              Erika Uyterhoeven—Marjorie Decker      2
+1211                   Erika Uyterhoeven—Mary Keefe      1
+1212            Erika Uyterhoeven—Michael Kushmerek      1
+1213             Erika Uyterhoeven—Michelle Ciccolo      1
+1214                   Erika Uyterhoeven—Mindy Domb      1
+1215              Erika Uyterhoeven—Natalie Higgins      1
+1216                Erika Uyterhoeven—Nika Elugardo      1
+1217               Erika Uyterhoeven—Patricia Duffy      1
+1218                  Erika Uyterhoeven—Paul Donato      1
+1219                 Erika Uyterhoeven—Peter Capano      1
+1220                  Erika Uyterhoeven—Ruth Balser      2
+1221               Erika Uyterhoeven—Sean Garballey      1
+1222                 Erika Uyterhoeven—Steven Owens      1
+1223               Erika Uyterhoeven—Steven Ultrino      1
+1224                 Erika Uyterhoeven—Tami Gouveia      1
+1225                 Erika Uyterhoeven—Tommy Vitolo      1
+1226                  Erika Uyterhoeven—Tram Nguyen      1
+1227        Erika Uyterhoeven—Tricia Farley-Bouvier      1
+1228                 Erika Uyterhoeven—Vanna Howard      1
+1229               Erika Uyterhoeven—William Galvin      1
+1230                     F. Jay Barrows—Hannah Kane      1
+1231               F. Jay Barrows—Kimberly Ferguson      1
+1232                   F. Jay Barrows—Michael Soter      1
+1233               F. Jay Barrows—Sheila Harrington      1
+1234                   F. Jay Barrows—Steven Howitt      1
+1235           F. Jay Barrows—Tricia Farley-Bouvier      1
+1236                    F. Jay Barrows—Vanna Howard      1
+1237                      Gerard Cassidy—Jack Lewis      1
+1238                  Gerard Cassidy—Jacob Oliveira      1
+1239                Gerard Cassidy—Jessica Giannino      1
+1240                   Gerard Cassidy—Joan Meschino      1
+1241                    Gerard Cassidy—Jon Santiago      1
+1242                Gerard Cassidy—Joseph McGonagle      1
+1243                        Gerard Cassidy—Kay Khan      1
+1244                Gerard Cassidy—Lindsay Sabadosa      1
+1245                  Gerard Cassidy—Maria Robinson      1
+1246                 Gerard Cassidy—Marjorie Decker      1
+1247                      Gerard Cassidy—Mary Keefe      1
+1248               Gerard Cassidy—Michael Kushmerek      1
+1249                Gerard Cassidy—Michelle Ciccolo      1
+1250                      Gerard Cassidy—Mindy Domb      1
+1251                 Gerard Cassidy—Natalie Higgins      1
+1252                   Gerard Cassidy—Nika Elugardo      1
+1253                  Gerard Cassidy—Patricia Duffy      1
+1254                     Gerard Cassidy—Paul Donato      1
+1255                    Gerard Cassidy—Peter Capano      1
+1256                     Gerard Cassidy—Ruth Balser      1
+1257                  Gerard Cassidy—Sean Garballey      1
+1258                    Gerard Cassidy—Steven Owens      1
+1259                  Gerard Cassidy—Steven Ultrino      1
+1260                    Gerard Cassidy—Tami Gouveia      1
+1261                    Gerard Cassidy—Tommy Vitolo      1
+1262                     Gerard Cassidy—Tram Nguyen      1
+1263           Gerard Cassidy—Tricia Farley-Bouvier      1
+1264                    Gerard Cassidy—Vanna Howard      1
+1265                  Gerard Cassidy—William Galvin      1
+1266                  Hannah Kane—Kimberly Ferguson      2
+1267                    Hannah Kane—Mathew Muratore      1
+1268                      Hannah Kane—Michael Soter      1
+1269                         Hannah Kane—Paul Frost      1
+1270                  Hannah Kane—Sheila Harrington      1
+1271                      Hannah Kane—Steven Howitt      2
+1272                      Hannah Kane—Susan Gifford      1
+1273              Hannah Kane—Tricia Farley-Bouvier      1
+1274                       Hannah Kane—Vanna Howard      1
+1275          Harriette Chandler—Jack Patrick Lewis      1
+1276              Harriette Chandler—Jacob Oliveira      1
+1277                 Harriette Chandler—James O'Day      1
+1278                   Harriette Chandler—Kip Diggs      1
+1279             Harriette Chandler—Linday Sabadosa      1
+1280                 Harriette Chandler—Liz Miranda      1
+1281                Harriette Chandler—Lori Ehrlich      1
+1282               Harriette Chandler—Marcos Devers      1
+1283                Harriette Chandler—Maria Duaime      1
+1284             Harriette Chandler—Mathew Muratore      1
+1285            Harriette Chandler—Michelle Ciccolo      1
+1286             Harriette Chandler—Michelle DuBois      1
+1287             Harriette Chandler—Natalie Higgins      1
+1288              Harriette Chandler—Patricia Duffy      1
+1289             Harriette Chandler—Patricia Haddad      1
+1290                 Harriette Chandler—Paul Donato      1
+1291                    Harriette Chandler—Rady Mom      1
+1292                 Harriette Chandler—Ruth Balser      1
+1293                Harriette Chandler—Steven Owens      1
+1294              Harriette Chandler—Steven Ultrino      1
+1295                 Harriette Chandler—Tackey Chan      1
+1296                Harriette Chandler—Tami Gouveia      1
+1297                 Harriette Chandler—Tram Nguyen      1
+1298       Harriette Chandler—Tricia Farley-Bouvier      1
+1299                Harriette Chandler—Vanna Howard      1
+1300                      Jack Lewis—Jacob Oliveira      1
+1301                       Jack Lewis—James Hawkins      1
+1302                    Jack Lewis—Jessica Giannino      1
+1303                       Jack Lewis—Joan Meschino      1
+1304                        Jack Lewis—Jon Santiago      1
+1305                    Jack Lewis—Jonathan Zlotnik      1
+1306                    Jack Lewis—Joseph McGonagle      1
+1307                         Jack Lewis—Josh Cutler      1
+1308              Jack Lewis—Kate Lipper-Garabedian      1
+1309                    Jack Lewis—Kathleen LaNatra      1
+1310                            Jack Lewis—Kay Khan      2
+1311                    Jack Lewis—Lindsay Sabadosa      4
+1312                         Jack Lewis—Liz Miranda      1
+1313                       Jack Lewis—Marcos Devers      2
+1314                      Jack Lewis—Maria Robinson      1
+1315                     Jack Lewis—Marjorie Decker      1
+1316                          Jack Lewis—Mary Keefe      1
+1317                   Jack Lewis—Michael Kushmerek      2
+1318                    Jack Lewis—Michelle Ciccolo      1
+1319                          Jack Lewis—Mindy Domb      1
+1320                     Jack Lewis—Natalie Higgins      1
+1321                       Jack Lewis—Nika Elugardo      2
+1322                      Jack Lewis—Patricia Duffy      1
+1323                     Jack Lewis—Patrick Kearney      1
+1324                         Jack Lewis—Paul Donato      1
+1325                         Jack Lewis—Paul Tucker      1
+1326                        Jack Lewis—Peter Capano      1
+1327                         Jack Lewis—Ruth Balser      1
+1328                      Jack Lewis—Sean Garballey      1
+1329                        Jack Lewis—Steven Owens      2
+1330                      Jack Lewis—Steven Ultrino      1
+1331                      Jack Lewis—Steven Xiarhos      1
+1332                     Jack Lewis—Susannah Whipps      1
+1333                        Jack Lewis—Tami Gouveia      3
+1334                        Jack Lewis—Tommy Vitolo      1
+1335                         Jack Lewis—Tram Nguyen      1
+1336               Jack Lewis—Tricia Farley-Bouvier      1
+1337                        Jack Lewis—Vanna Howard      2
+1338                      Jack Lewis—William Galvin      1
+1339              Jack Patrick Lewis—Jacob Oliveira      1
+1340                 Jack Patrick Lewis—James O'Day      1
+1341                   Jack Patrick Lewis—Kip Diggs      1
+1342             Jack Patrick Lewis—Linday Sabadosa      1
+1343                 Jack Patrick Lewis—Liz Miranda      1
+1344                Jack Patrick Lewis—Lori Ehrlich      1
+1345               Jack Patrick Lewis—Marcos Devers      1
+1346                Jack Patrick Lewis—Maria Duaime      1
+1347             Jack Patrick Lewis—Mathew Muratore      1
+1348            Jack Patrick Lewis—Michelle Ciccolo      1
+1349             Jack Patrick Lewis—Michelle DuBois      1
+1350             Jack Patrick Lewis—Natalie Higgins      1
+1351              Jack Patrick Lewis—Patricia Duffy      1
+1352             Jack Patrick Lewis—Patricia Haddad      1
+1353                 Jack Patrick Lewis—Paul Donato      1
+1354                    Jack Patrick Lewis—Rady Mom      1
+1355                 Jack Patrick Lewis—Ruth Balser      1
+1356                Jack Patrick Lewis—Steven Owens      1
+1357              Jack Patrick Lewis—Steven Ultrino      1
+1358                 Jack Patrick Lewis—Tackey Chan      1
+1359                Jack Patrick Lewis—Tami Gouveia      1
+1360                 Jack Patrick Lewis—Tram Nguyen      1
+1361       Jack Patrick Lewis—Tricia Farley-Bouvier      1
+1362                Jack Patrick Lewis—Vanna Howard      1
+1363                     Jacob Oliveira—James O'Day      1
+1364                Jacob Oliveira—Jessica Giannino      1
+1365                   Jacob Oliveira—Joan Meschino      1
+1366                    Jacob Oliveira—Jon Santiago      1
+1367                Jacob Oliveira—Joseph McGonagle      1
+1368                        Jacob Oliveira—Kay Khan      1
+1369                       Jacob Oliveira—Kip Diggs      1
+1370                 Jacob Oliveira—Linday Sabadosa      1
+1371                Jacob Oliveira—Lindsay Sabadosa      1
+1372                     Jacob Oliveira—Liz Miranda      1
+1373                    Jacob Oliveira—Lori Ehrlich      1
+1374                   Jacob Oliveira—Marcos Devers      1
+1375                    Jacob Oliveira—Maria Duaime      1
+1376                  Jacob Oliveira—Maria Robinson      1
+1377                 Jacob Oliveira—Marjorie Decker      1
+1378                      Jacob Oliveira—Mary Keefe      1
+1379                 Jacob Oliveira—Mathew Muratore      1
+1380               Jacob Oliveira—Michael Kushmerek      1
+1381                Jacob Oliveira—Michelle Ciccolo      2
+1382                 Jacob Oliveira—Michelle DuBois      1
+1383                      Jacob Oliveira—Mindy Domb      1
+1384                 Jacob Oliveira—Natalie Higgins      2
+1385                   Jacob Oliveira—Nika Elugardo      1
+1386                  Jacob Oliveira—Patricia Duffy      2
+1387                 Jacob Oliveira—Patricia Haddad      1
+1388                     Jacob Oliveira—Paul Donato      2
+1389                    Jacob Oliveira—Peter Capano      1
+1390                        Jacob Oliveira—Rady Mom      1
+1391                     Jacob Oliveira—Ruth Balser      2
+1392                  Jacob Oliveira—Sean Garballey      1
+1393                    Jacob Oliveira—Steven Owens      2
+1394                  Jacob Oliveira—Steven Ultrino      2
+1395                     Jacob Oliveira—Tackey Chan      1
+1396                    Jacob Oliveira—Tami Gouveia      2
+1397                    Jacob Oliveira—Tommy Vitolo      1
+1398                     Jacob Oliveira—Tram Nguyen      2
+1399           Jacob Oliveira—Tricia Farley-Bouvier      2
+1400                    Jacob Oliveira—Vanna Howard      2
+1401                  Jacob Oliveira—William Galvin      1
+1402               James Arciero—James Arena-DeRosa      1
+1403                 James Arciero—Lindsay Sabadosa      1
+1404                  James Arciero—Michelle DuBois      1
+1405                    James Arciero—Paul McMurtry      1
+1406                      James Arciero—Tackey Chan      1
+1407            James Arena-DeRosa—Lindsay Sabadosa      1
+1408             James Arena-DeRosa—Michelle DuBois      1
+1409               James Arena-DeRosa—Paul McMurtry      1
+1410                 James Arena-DeRosa—Tackey Chan      1
+1411                 James Hawkins—Jonathan Zlotnik      1
+1412                      James Hawkins—Josh Cutler      1
+1413           James Hawkins—Kate Lipper-Garabedian      1
+1414                 James Hawkins—Kathleen LaNatra      1
+1415                 James Hawkins—Lindsay Sabadosa      1
+1416                    James Hawkins—Marcos Devers      1
+1417                James Hawkins—Michael Kushmerek      1
+1418                  James Hawkins—Patrick Kearney      1
+1419                      James Hawkins—Paul Tucker      1
+1420                     James Hawkins—Steven Owens      1
+1421                   James Hawkins—Steven Xiarhos      1
+1422                  James Hawkins—Susannah Whipps      1
+1423                     James Hawkins—Tami Gouveia      1
+1424                     James Hawkins—Vanna Howard      1
+1425                          James O'Day—Kip Diggs      1
+1426                    James O'Day—Linday Sabadosa      1
+1427                   James O'Day—Lindsay Sabadosa      1
+1428                        James O'Day—Liz Miranda      1
+1429                       James O'Day—Lori Ehrlich      1
+1430                      James O'Day—Marcos Devers      1
+1431                       James O'Day—Maria Duaime      1
+1432                    James O'Day—Mathew Muratore      1
+1433                  James O'Day—Michael Kushmerek      1
+1434                   James O'Day—Michelle Ciccolo      2
+1435                    James O'Day—Michelle DuBois      2
+1436                    James O'Day—Natalie Higgins      2
+1437                     James O'Day—Patricia Duffy      1
+1438                    James O'Day—Patricia Haddad      1
+1439                        James O'Day—Paul Donato      1
+1440                        James O'Day—Paul Schmid      1
+1441                           James O'Day—Rady Mom      1
+1442                        James O'Day—Ruth Balser      1
+1443                       James O'Day—Steven Owens      2
+1444                     James O'Day—Steven Ultrino      2
+1445                        James O'Day—Tackey Chan      1
+1446                       James O'Day—Tami Gouveia      2
+1447                       James O'Day—Tommy Vitolo      1
+1448                        James O'Day—Tram Nguyen      2
+1449              James O'Day—Tricia Farley-Bouvier      2
+1450                       James O'Day—Vanna Howard      1
+1451                     James O'Day—William Galvin      1
+1452                    Jamie Belsito—Jeffrey Turco      1
+1453                 Jamie Belsito—Jessica Giannino      1
+1454                 Jamie Belsito—Lindsay Sabadosa      1
+1455                      Jamie Belsito—Liz Miranda      1
+1456                  Jamie Belsito—Natalie Higgins      1
+1457                     Jamie Belsito—Steven Owens      1
+1458                     Jamie Belsito—Tami Gouveia      1
+1459                 Jeffrey Turco—Jessica Giannino      1
+1460                 Jeffrey Turco—Lindsay Sabadosa      1
+1461                      Jeffrey Turco—Liz Miranda      1
+1462                     Jeffrey Turco—Steven Owens      1
+1463                     Jeffrey Turco—Tami Gouveia      1
+1464                 Jessica Giannino—Joan Meschino      1
+1465                  Jessica Giannino—Jon Santiago      1
+1466              Jessica Giannino—Joseph McGonagle      1
+1467                      Jessica Giannino—Kay Khan      1
+1468              Jessica Giannino—Lindsay Sabadosa      2
+1469                   Jessica Giannino—Liz Miranda      1
+1470                Jessica Giannino—Maria Robinson      1
+1471               Jessica Giannino—Marjorie Decker      1
+1472                    Jessica Giannino—Mary Keefe      1
+1473             Jessica Giannino—Michael Kushmerek      1
+1474              Jessica Giannino—Michelle Ciccolo      1
+1475                    Jessica Giannino—Mindy Domb      1
+1476               Jessica Giannino—Natalie Higgins      1
+1477                 Jessica Giannino—Nika Elugardo      1
+1478                Jessica Giannino—Patricia Duffy      1
+1479                   Jessica Giannino—Paul Donato      1
+1480                  Jessica Giannino—Peter Capano      1
+1481                   Jessica Giannino—Ruth Balser      1
+1482                Jessica Giannino—Sean Garballey      1
+1483                  Jessica Giannino—Steven Owens      2
+1484                Jessica Giannino—Steven Ultrino      1
+1485                Jessica Giannino—Steven Xiarhos      1
+1486                  Jessica Giannino—Tami Gouveia      2
+1487                  Jessica Giannino—Tommy Vitolo      1
+1488                   Jessica Giannino—Tram Nguyen      1
+1489         Jessica Giannino—Tricia Farley-Bouvier      1
+1490                  Jessica Giannino—Vanna Howard      1
+1491                Jessica Giannino—William Galvin      1
+1492                     Joan Meschino—Jon Santiago      1
+1493                 Joan Meschino—Joseph McGonagle      1
+1494                         Joan Meschino—Kay Khan      1
+1495                 Joan Meschino—Lindsay Sabadosa      1
+1496                   Joan Meschino—Maria Robinson      1
+1497                  Joan Meschino—Marjorie Decker      1
+1498                       Joan Meschino—Mary Keefe      1
+1499                Joan Meschino—Michael Kushmerek      1
+1500                 Joan Meschino—Michelle Ciccolo      1
+1501                       Joan Meschino—Mindy Domb      1
+1502                  Joan Meschino—Natalie Higgins      1
+1503                    Joan Meschino—Nika Elugardo      1
+1504                   Joan Meschino—Patricia Duffy      1
+1505                      Joan Meschino—Paul Donato      1
+1506                     Joan Meschino—Peter Capano      1
+1507                      Joan Meschino—Ruth Balser      1
+1508                   Joan Meschino—Sean Garballey      1
+1509                     Joan Meschino—Steven Owens      1
+1510                   Joan Meschino—Steven Ultrino      1
+1511                     Joan Meschino—Tami Gouveia      1
+1512                     Joan Meschino—Tommy Vitolo      1
+1513                      Joan Meschino—Tram Nguyen      1
+1514            Joan Meschino—Tricia Farley-Bouvier      1
+1515                     Joan Meschino—Vanna Howard      1
+1516                   Joan Meschino—William Galvin      1
+1517                  Jon Santiago—Joseph McGonagle      1
+1518                          Jon Santiago—Kay Khan      1
+1519                  Jon Santiago—Lindsay Sabadosa      1
+1520                    Jon Santiago—Maria Robinson      1
+1521                   Jon Santiago—Marjorie Decker      1
+1522                        Jon Santiago—Mary Keefe      1
+1523                 Jon Santiago—Michael Kushmerek      1
+1524                  Jon Santiago—Michelle Ciccolo      1
+1525                        Jon Santiago—Mindy Domb      1
+1526                   Jon Santiago—Natalie Higgins      1
+1527                     Jon Santiago—Nika Elugardo      1
+1528                    Jon Santiago—Patricia Duffy      1
+1529                       Jon Santiago—Paul Donato      1
+1530                      Jon Santiago—Peter Capano      1
+1531                       Jon Santiago—Ruth Balser      1
+1532                    Jon Santiago—Sean Garballey      1
+1533                      Jon Santiago—Steven Owens      1
+1534                    Jon Santiago—Steven Ultrino      1
+1535                      Jon Santiago—Tami Gouveia      1
+1536                      Jon Santiago—Tommy Vitolo      1
+1537                       Jon Santiago—Tram Nguyen      1
+1538             Jon Santiago—Tricia Farley-Bouvier      1
+1539                      Jon Santiago—Vanna Howard      1
+1540                    Jon Santiago—William Galvin      1
+1541                   Jonathan Zlotnik—Josh Cutler      1
+1542        Jonathan Zlotnik—Kate Lipper-Garabedian      1
+1543              Jonathan Zlotnik—Kathleen LaNatra      1
+1544              Jonathan Zlotnik—Lindsay Sabadosa      1
+1545                 Jonathan Zlotnik—Marcos Devers      1
+1546             Jonathan Zlotnik—Michael Kushmerek      1
+1547               Jonathan Zlotnik—Patrick Kearney      1
+1548                   Jonathan Zlotnik—Paul Tucker      1
+1549                  Jonathan Zlotnik—Steven Owens      1
+1550                Jonathan Zlotnik—Steven Xiarhos      1
+1551               Jonathan Zlotnik—Susannah Whipps      1
+1552                  Jonathan Zlotnik—Tami Gouveia      1
+1553                  Jonathan Zlotnik—Vanna Howard      1
+1554                  Joseph Kearney—Joseph McKenna      1
+1555                Joseph Kearney—Lindsay Sabadosa      1
+1556                      Joseph Kearney—Mary Keefe      1
+1557                 Joseph Kearney—Mathew Muratore      1
+1558                   Joseph Kearney—Michael Soter      1
+1559                 Joseph Kearney—Michelle DuBois      1
+1560                    Joseph Kearney—Peter Capano      1
+1561                    Joseph Kearney—Shawn Dooley      1
+1562                   Joseph Kearney—Steven Howitt      1
+1563                    Joseph Kearney—Tami Gouveia      1
+1564                     Joseph Kearney—Tram Nguyen      1
+1565                      Joseph McGonagle—Kay Khan      1
+1566              Joseph McGonagle—Lindsay Sabadosa      1
+1567                Joseph McGonagle—Maria Robinson      1
+1568               Joseph McGonagle—Marjorie Decker      1
+1569                    Joseph McGonagle—Mary Keefe      1
+1570             Joseph McGonagle—Michael Kushmerek      1
+1571              Joseph McGonagle—Michelle Ciccolo      1
+1572                    Joseph McGonagle—Mindy Domb      1
+1573               Joseph McGonagle—Natalie Higgins      1
+1574                 Joseph McGonagle—Nika Elugardo      1
+1575                Joseph McGonagle—Patricia Duffy      1
+1576                   Joseph McGonagle—Paul Donato      1
+1577                  Joseph McGonagle—Peter Capano      1
+1578                   Joseph McGonagle—Ruth Balser      1
+1579                Joseph McGonagle—Sean Garballey      1
+1580                  Joseph McGonagle—Steven Owens      1
+1581                Joseph McGonagle—Steven Ultrino      1
+1582                  Joseph McGonagle—Tami Gouveia      1
+1583                  Joseph McGonagle—Tommy Vitolo      1
+1584                   Joseph McGonagle—Tram Nguyen      1
+1585         Joseph McGonagle—Tricia Farley-Bouvier      1
+1586                  Joseph McGonagle—Vanna Howard      1
+1587                Joseph McGonagle—William Galvin      1
+1588                Joseph McKenna—Lindsay Sabadosa      1
+1589                      Joseph McKenna—Mary Keefe      1
+1590                 Joseph McKenna—Mathew Muratore      1
+1591                   Joseph McKenna—Michael Soter      1
+1592                 Joseph McKenna—Michelle DuBois      1
+1593                    Joseph McKenna—Peter Capano      1
+1594                    Joseph McKenna—Shawn Dooley      1
+1595                   Joseph McKenna—Steven Howitt      1
+1596                    Joseph McKenna—Tami Gouveia      1
+1597                     Joseph McKenna—Tram Nguyen      1
+1598             Josh Cutler—Kate Lipper-Garabedian      1
+1599                   Josh Cutler—Kathleen LaNatra      1
+1600                   Josh Cutler—Lindsay Sabadosa      1
+1601                      Josh Cutler—Marcos Devers      1
+1602                  Josh Cutler—Michael Kushmerek      1
+1603                    Josh Cutler—Patrick Kearney      1
+1604                        Josh Cutler—Paul Tucker      1
+1605                       Josh Cutler—Steven Owens      1
+1606                     Josh Cutler—Steven Xiarhos      1
+1607                    Josh Cutler—Susannah Whipps      1
+1608                       Josh Cutler—Tami Gouveia      1
+1609                       Josh Cutler—Vanna Howard      1
+1610        Kate Lipper-Garabedian—Kathleen LaNatra      1
+1611        Kate Lipper-Garabedian—Lindsay Sabadosa      1
+1612           Kate Lipper-Garabedian—Marcos Devers      1
+1613       Kate Lipper-Garabedian—Michael Kushmerek      1
+1614         Kate Lipper-Garabedian—Patrick Kearney      1
+1615             Kate Lipper-Garabedian—Paul Tucker      1
+1616            Kate Lipper-Garabedian—Steven Owens      1
+1617          Kate Lipper-Garabedian—Steven Xiarhos      1
+1618         Kate Lipper-Garabedian—Susannah Whipps      1
+1619            Kate Lipper-Garabedian—Tami Gouveia      1
+1620            Kate Lipper-Garabedian—Vanna Howard      1
+1621              Kathleen LaNatra—Lindsay Sabadosa      1
+1622                 Kathleen LaNatra—Marcos Devers      1
+1623             Kathleen LaNatra—Michael Kushmerek      1
+1624               Kathleen LaNatra—Patrick Kearney      1
+1625                   Kathleen LaNatra—Paul Tucker      1
+1626                  Kathleen LaNatra—Steven Owens      1
+1627                Kathleen LaNatra—Steven Xiarhos      1
+1628               Kathleen LaNatra—Susannah Whipps      1
+1629                  Kathleen LaNatra—Tami Gouveia      1
+1630                  Kathleen LaNatra—Vanna Howard      1
+1631                      Kay Khan—Lindsay Sabadosa      3
+1632                           Kay Khan—Liz Miranda      1
+1633                         Kay Khan—Marcos Devers      1
+1634                        Kay Khan—Maria Robinson      1
+1635                       Kay Khan—Marjorie Decker      1
+1636                            Kay Khan—Mary Keefe      1
+1637                     Kay Khan—Michael Kushmerek      1
+1638                      Kay Khan—Michelle Ciccolo      1
+1639                            Kay Khan—Mindy Domb      1
+1640                       Kay Khan—Natalie Higgins      1
+1641                         Kay Khan—Nika Elugardo      2
+1642                        Kay Khan—Patricia Duffy      1
+1643                           Kay Khan—Paul Donato      1
+1644                          Kay Khan—Peter Capano      1
+1645                           Kay Khan—Ruth Balser      1
+1646                        Kay Khan—Sean Garballey      1
+1647                          Kay Khan—Steven Owens      2
+1648                        Kay Khan—Steven Ultrino      1
+1649                          Kay Khan—Tami Gouveia      1
+1650                          Kay Khan—Tommy Vitolo      1
+1651                           Kay Khan—Tram Nguyen      1
+1652                 Kay Khan—Tricia Farley-Bouvier      1
+1653                          Kay Khan—Vanna Howard      1
+1654                        Kay Khan—William Galvin      1
+1655                       Kevin Honan—Vanna Howard      1
+1656              Kimberly Ferguson—Mathew Muratore      1
+1657                Kimberly Ferguson—Michael Soter      1
+1658                   Kimberly Ferguson—Paul Frost      1
+1659            Kimberly Ferguson—Sheila Harrington      1
+1660                Kimberly Ferguson—Steven Howitt      2
+1661                Kimberly Ferguson—Susan Gifford      1
+1662        Kimberly Ferguson—Tricia Farley-Bouvier      1
+1663                 Kimberly Ferguson—Vanna Howard      1
+1664                      Kip Diggs—Linday Sabadosa      1
+1665                          Kip Diggs—Liz Miranda      1
+1666                         Kip Diggs—Lori Ehrlich      1
+1667                        Kip Diggs—Marcos Devers      1
+1668                         Kip Diggs—Maria Duaime      1
+1669                      Kip Diggs—Mathew Muratore      1
+1670                     Kip Diggs—Michelle Ciccolo      1
+1671                      Kip Diggs—Michelle DuBois      1
+1672                      Kip Diggs—Natalie Higgins      1
+1673                       Kip Diggs—Patricia Duffy      1
+1674                      Kip Diggs—Patricia Haddad      1
+1675                          Kip Diggs—Paul Donato      1
+1676                             Kip Diggs—Rady Mom      1
+1677                          Kip Diggs—Ruth Balser      1
+1678                         Kip Diggs—Steven Owens      1
+1679                       Kip Diggs—Steven Ultrino      1
+1680                          Kip Diggs—Tackey Chan      1
+1681                         Kip Diggs—Tami Gouveia      1
+1682                          Kip Diggs—Tram Nguyen      1
+1683                Kip Diggs—Tricia Farley-Bouvier      1
+1684                         Kip Diggs—Vanna Howard      1
+1685                    Linday Sabadosa—Liz Miranda      1
+1686                   Linday Sabadosa—Lori Ehrlich      1
+1687                  Linday Sabadosa—Marcos Devers      1
+1688                   Linday Sabadosa—Maria Duaime      1
+1689                Linday Sabadosa—Mathew Muratore      1
+1690               Linday Sabadosa—Michelle Ciccolo      1
+1691                Linday Sabadosa—Michelle DuBois      1
+1692                Linday Sabadosa—Natalie Higgins      1
+1693                 Linday Sabadosa—Patricia Duffy      1
+1694                Linday Sabadosa—Patricia Haddad      1
+1695                    Linday Sabadosa—Paul Donato      1
+1696                       Linday Sabadosa—Rady Mom      1
+1697                    Linday Sabadosa—Ruth Balser      1
+1698                   Linday Sabadosa—Steven Owens      1
+1699                 Linday Sabadosa—Steven Ultrino      1
+1700                    Linday Sabadosa—Tackey Chan      1
+1701                   Linday Sabadosa—Tami Gouveia      1
+1702                    Linday Sabadosa—Tram Nguyen      1
+1703          Linday Sabadosa—Tricia Farley-Bouvier      1
+1704                   Linday Sabadosa—Vanna Howard      1
+1705                   Lindsay Sabadosa—Liz Miranda      2
+1706                 Lindsay Sabadosa—Marcos Devers      3
+1707                Lindsay Sabadosa—Maria Robinson      1
+1708               Lindsay Sabadosa—Marjorie Decker      2
+1709                    Lindsay Sabadosa—Mary Keefe      2
+1710               Lindsay Sabadosa—Mathew Muratore      2
+1711             Lindsay Sabadosa—Michael Kushmerek      3
+1712                 Lindsay Sabadosa—Michael Soter      1
+1713              Lindsay Sabadosa—Michelle Ciccolo      3
+1714               Lindsay Sabadosa—Michelle DuBois      4
+1715                    Lindsay Sabadosa—Mindy Domb      1
+1716               Lindsay Sabadosa—Natalie Higgins      2
+1717                 Lindsay Sabadosa—Nika Elugardo      3
+1718                Lindsay Sabadosa—Patricia Duffy      1
+1719               Lindsay Sabadosa—Patrick Kearney      1
+1720                   Lindsay Sabadosa—Paul Donato      1
+1721                 Lindsay Sabadosa—Paul McMurtry      1
+1722                   Lindsay Sabadosa—Paul Schmid      1
+1723                   Lindsay Sabadosa—Paul Tucker      1
+1724                  Lindsay Sabadosa—Peter Capano      2
+1725                   Lindsay Sabadosa—Ruth Balser      1
+1726                Lindsay Sabadosa—Sal DiDomenico      1
+1727                Lindsay Sabadosa—Sean Garballey      2
+1728                  Lindsay Sabadosa—Shawn Dooley      1
+1729                 Lindsay Sabadosa—Steven Howitt      1
+1730                  Lindsay Sabadosa—Steven Owens      5
+1731                Lindsay Sabadosa—Steven Ultrino      1
+1732                Lindsay Sabadosa—Steven Xiarhos      1
+1733               Lindsay Sabadosa—Susannah Whipps      2
+1734                   Lindsay Sabadosa—Tackey Chan      1
+1735                  Lindsay Sabadosa—Tami Gouveia      6
+1736                  Lindsay Sabadosa—Tommy Vitolo      1
+1737                   Lindsay Sabadosa—Tram Nguyen      4
+1738         Lindsay Sabadosa—Tricia Farley-Bouvier      1
+1739                  Lindsay Sabadosa—Vanna Howard      2
+1740                Lindsay Sabadosa—William Galvin      2
+1741                       Liz Miranda—Lori Ehrlich      1
+1742                      Liz Miranda—Marcos Devers      2
+1743                       Liz Miranda—Maria Duaime      1
+1744                    Liz Miranda—Mathew Muratore      1
+1745                   Liz Miranda—Michelle Ciccolo      1
+1746                    Liz Miranda—Michelle DuBois      1
+1747                    Liz Miranda—Natalie Higgins      1
+1748                      Liz Miranda—Nika Elugardo      1
+1749                     Liz Miranda—Patricia Duffy      1
+1750                    Liz Miranda—Patricia Haddad      1
+1751                        Liz Miranda—Paul Donato      1
+1752                           Liz Miranda—Rady Mom      1
+1753                        Liz Miranda—Ruth Balser      1
+1754                       Liz Miranda—Steven Owens      2
+1755                     Liz Miranda—Steven Ultrino      1
+1756                        Liz Miranda—Tackey Chan      1
+1757                       Liz Miranda—Tami Gouveia      2
+1758                        Liz Miranda—Tram Nguyen      1
+1759              Liz Miranda—Tricia Farley-Bouvier      1
+1760                       Liz Miranda—Vanna Howard      1
+1761                     Lori Ehrlich—Marcos Devers      1
+1762                      Lori Ehrlich—Maria Duaime      1
+1763                   Lori Ehrlich—Mathew Muratore      1
+1764                  Lori Ehrlich—Michelle Ciccolo      1
+1765                   Lori Ehrlich—Michelle DuBois      1
+1766                   Lori Ehrlich—Natalie Higgins      1
+1767                    Lori Ehrlich—Patricia Duffy      1
+1768                   Lori Ehrlich—Patricia Haddad      1
+1769                       Lori Ehrlich—Paul Donato      1
+1770                          Lori Ehrlich—Rady Mom      1
+1771                       Lori Ehrlich—Ruth Balser      1
+1772                      Lori Ehrlich—Steven Owens      1
+1773                    Lori Ehrlich—Steven Ultrino      1
+1774                       Lori Ehrlich—Tackey Chan      1
+1775                      Lori Ehrlich—Tami Gouveia      1
+1776                       Lori Ehrlich—Tram Nguyen      1
+1777             Lori Ehrlich—Tricia Farley-Bouvier      1
+1778                      Lori Ehrlich—Vanna Howard      1
+1779                     Marcos Devers—Maria Duaime      1
+1780                  Marcos Devers—Marjorie Decker      1
+1781                  Marcos Devers—Mathew Muratore      2
+1782                Marcos Devers—Michael Kushmerek      1
+1783                 Marcos Devers—Michelle Ciccolo      2
+1784                  Marcos Devers—Michelle DuBois      2
+1785                  Marcos Devers—Natalie Higgins      2
+1786                    Marcos Devers—Nika Elugardo      2
+1787                   Marcos Devers—Patricia Duffy      1
+1788                  Marcos Devers—Patricia Haddad      1
+1789                  Marcos Devers—Patrick Kearney      1
+1790                      Marcos Devers—Paul Donato      1
+1791                      Marcos Devers—Paul Tucker      1
+1792                         Marcos Devers—Rady Mom      1
+1793                      Marcos Devers—Ruth Balser      1
+1794                   Marcos Devers—Sal DiDomenico      1
+1795                   Marcos Devers—Sean Garballey      1
+1796                     Marcos Devers—Steven Owens      2
+1797                   Marcos Devers—Steven Ultrino      1
+1798                   Marcos Devers—Steven Xiarhos      1
+1799                  Marcos Devers—Susannah Whipps      2
+1800                      Marcos Devers—Tackey Chan      1
+1801                     Marcos Devers—Tami Gouveia      2
+1802                      Marcos Devers—Tram Nguyen      2
+1803            Marcos Devers—Tricia Farley-Bouvier      1
+1804                     Marcos Devers—Vanna Howard      2
+1805                   Maria Duaime—Mathew Muratore      1
+1806                  Maria Duaime—Michelle Ciccolo      1
+1807                   Maria Duaime—Michelle DuBois      1
+1808                   Maria Duaime—Natalie Higgins      1
+1809                    Maria Duaime—Patricia Duffy      1
+1810                   Maria Duaime—Patricia Haddad      1
+1811                       Maria Duaime—Paul Donato      1
+1812                          Maria Duaime—Rady Mom      1
+1813                       Maria Duaime—Ruth Balser      1
+1814                      Maria Duaime—Steven Owens      1
+1815                    Maria Duaime—Steven Ultrino      1
+1816                       Maria Duaime—Tackey Chan      1
+1817                      Maria Duaime—Tami Gouveia      1
+1818                       Maria Duaime—Tram Nguyen      1
+1819             Maria Duaime—Tricia Farley-Bouvier      1
+1820                      Maria Duaime—Vanna Howard      1
+1821                 Maria Robinson—Marjorie Decker      1
+1822                      Maria Robinson—Mary Keefe      1
+1823               Maria Robinson—Michael Kushmerek      1
+1824                Maria Robinson—Michelle Ciccolo      1
+1825                      Maria Robinson—Mindy Domb      1
+1826                 Maria Robinson—Natalie Higgins      1
+1827                   Maria Robinson—Nika Elugardo      1
+1828                  Maria Robinson—Patricia Duffy      1
+1829                     Maria Robinson—Paul Donato      1
+1830                    Maria Robinson—Peter Capano      1
+1831                     Maria Robinson—Ruth Balser      1
+1832                  Maria Robinson—Sean Garballey      1
+1833                    Maria Robinson—Steven Owens      1
+1834                  Maria Robinson—Steven Ultrino      1
+1835                    Maria Robinson—Tami Gouveia      1
+1836                    Maria Robinson—Tommy Vitolo      1
+1837                     Maria Robinson—Tram Nguyen      1
+1838           Maria Robinson—Tricia Farley-Bouvier      1
+1839                    Maria Robinson—Vanna Howard      1
+1840                  Maria Robinson—William Galvin      1
+1841                     Marjorie Decker—Mary Keefe      1
+1842                Marjorie Decker—Mathew Muratore      1
+1843              Marjorie Decker—Michael Kushmerek      1
+1844               Marjorie Decker—Michelle Ciccolo      2
+1845                Marjorie Decker—Michelle DuBois      1
+1846                     Marjorie Decker—Mindy Domb      1
+1847                Marjorie Decker—Natalie Higgins      2
+1848                  Marjorie Decker—Nika Elugardo      2
+1849                 Marjorie Decker—Patricia Duffy      1
+1850                    Marjorie Decker—Paul Donato      1
+1851                   Marjorie Decker—Peter Capano      1
+1852                    Marjorie Decker—Ruth Balser      2
+1853                 Marjorie Decker—Sal DiDomenico      1
+1854                 Marjorie Decker—Sean Garballey      2
+1855                   Marjorie Decker—Steven Owens      1
+1856                 Marjorie Decker—Steven Ultrino      1
+1857                Marjorie Decker—Susannah Whipps      1
+1858                   Marjorie Decker—Tami Gouveia      1
+1859                   Marjorie Decker—Tommy Vitolo      1
+1860                    Marjorie Decker—Tram Nguyen      2
+1861          Marjorie Decker—Tricia Farley-Bouvier      1
+1862                   Marjorie Decker—Vanna Howard      1
+1863                 Marjorie Decker—William Galvin      1
+1864                     Mary Keefe—Mathew Muratore      1
+1865                   Mary Keefe—Michael Kushmerek      1
+1866                       Mary Keefe—Michael Soter      1
+1867                    Mary Keefe—Michelle Ciccolo      1
+1868                     Mary Keefe—Michelle DuBois      1
+1869                          Mary Keefe—Mindy Domb      1
+1870                     Mary Keefe—Natalie Higgins      1
+1871                       Mary Keefe—Nika Elugardo      1
+1872                      Mary Keefe—Patricia Duffy      1
+1873                         Mary Keefe—Paul Donato      1
+1874                        Mary Keefe—Peter Capano      2
+1875                         Mary Keefe—Ruth Balser      1
+1876                      Mary Keefe—Sean Garballey      1
+1877                        Mary Keefe—Shawn Dooley      1
+1878                       Mary Keefe—Steven Howitt      1
+1879                        Mary Keefe—Steven Owens      1
+1880                      Mary Keefe—Steven Ultrino      1
+1881                        Mary Keefe—Tami Gouveia      2
+1882                        Mary Keefe—Tommy Vitolo      1
+1883                         Mary Keefe—Tram Nguyen      2
+1884               Mary Keefe—Tricia Farley-Bouvier      1
+1885                        Mary Keefe—Vanna Howard      1
+1886                      Mary Keefe—William Galvin      1
+1887                  Mathew Muratore—Michael Soter      1
+1888               Mathew Muratore—Michelle Ciccolo      2
+1889                Mathew Muratore—Michelle DuBois      3
+1890                Mathew Muratore—Natalie Higgins      2
+1891                  Mathew Muratore—Nika Elugardo      1
+1892                 Mathew Muratore—Patricia Duffy      1
+1893                Mathew Muratore—Patricia Haddad      1
+1894                    Mathew Muratore—Paul Donato      1
+1895                     Mathew Muratore—Paul Frost      1
+1896                   Mathew Muratore—Peter Capano      1
+1897                       Mathew Muratore—Rady Mom      1
+1898                    Mathew Muratore—Ruth Balser      1
+1899                 Mathew Muratore—Sal DiDomenico      1
+1900                 Mathew Muratore—Sean Garballey      1
+1901                   Mathew Muratore—Shawn Dooley      1
+1902                  Mathew Muratore—Steven Howitt      2
+1903                   Mathew Muratore—Steven Owens      1
+1904                 Mathew Muratore—Steven Ultrino      1
+1905                  Mathew Muratore—Susan Gifford      1
+1906                Mathew Muratore—Susannah Whipps      1
+1907                    Mathew Muratore—Tackey Chan      1
+1908                   Mathew Muratore—Tami Gouveia      2
+1909                    Mathew Muratore—Tram Nguyen      3
+1910          Mathew Muratore—Tricia Farley-Bouvier      1
+1911                   Mathew Muratore—Vanna Howard      1
+1912             Michael Kushmerek—Michelle Ciccolo      2
+1913              Michael Kushmerek—Michelle DuBois      1
+1914                   Michael Kushmerek—Mindy Domb      1
+1915              Michael Kushmerek—Natalie Higgins      1
+1916                Michael Kushmerek—Nika Elugardo      1
+1917               Michael Kushmerek—Patricia Duffy      1
+1918              Michael Kushmerek—Patrick Kearney      1
+1919                  Michael Kushmerek—Paul Donato      1
+1920                  Michael Kushmerek—Paul Schmid      1
+1921                  Michael Kushmerek—Paul Tucker      1
+1922                 Michael Kushmerek—Peter Capano      1
+1923                  Michael Kushmerek—Ruth Balser      1
+1924               Michael Kushmerek—Sean Garballey      1
+1925                 Michael Kushmerek—Steven Owens      3
+1926               Michael Kushmerek—Steven Ultrino      1
+1927               Michael Kushmerek—Steven Xiarhos      1
+1928              Michael Kushmerek—Susannah Whipps      1
+1929                 Michael Kushmerek—Tami Gouveia      3
+1930                 Michael Kushmerek—Tommy Vitolo      1
+1931                  Michael Kushmerek—Tram Nguyen      2
+1932        Michael Kushmerek—Tricia Farley-Bouvier      1
+1933                 Michael Kushmerek—Vanna Howard      2
+1934               Michael Kushmerek—William Galvin      2
+1935                  Michael Soter—Michelle DuBois      1
+1936                     Michael Soter—Peter Capano      1
+1937                     Michael Soter—Shawn Dooley      1
+1938                Michael Soter—Sheila Harrington      1
+1939                    Michael Soter—Steven Howitt      2
+1940                     Michael Soter—Tami Gouveia      1
+1941                      Michael Soter—Tram Nguyen      1
+1942            Michael Soter—Tricia Farley-Bouvier      1
+1943                     Michael Soter—Vanna Howard      1
+1944               Michelle Ciccolo—Michelle DuBois      3
+1945                    Michelle Ciccolo—Mindy Domb      1
+1946               Michelle Ciccolo—Natalie Higgins      3
+1947                 Michelle Ciccolo—Nika Elugardo      2
+1948                Michelle Ciccolo—Patricia Duffy      2
+1949               Michelle Ciccolo—Patricia Haddad      1
+1950                   Michelle Ciccolo—Paul Donato      2
+1951                   Michelle Ciccolo—Paul Schmid      1
+1952                  Michelle Ciccolo—Peter Capano      1
+1953                      Michelle Ciccolo—Rady Mom      1
+1954              Michelle Ciccolo—Richard Haggerty      1
+1955                   Michelle Ciccolo—Ruth Balser      2
+1956                Michelle Ciccolo—Sal DiDomenico      1
+1957                Michelle Ciccolo—Sean Garballey      2
+1958                  Michelle Ciccolo—Steven Owens      3
+1959                Michelle Ciccolo—Steven Ultrino      2
+1960               Michelle Ciccolo—Susannah Whipps      1
+1961                   Michelle Ciccolo—Tackey Chan      1
+1962                  Michelle Ciccolo—Tami Gouveia      3
+1963                  Michelle Ciccolo—Tommy Vitolo      1
+1964                   Michelle Ciccolo—Tram Nguyen      4
+1965         Michelle Ciccolo—Tricia Farley-Bouvier      2
+1966                  Michelle Ciccolo—Vanna Howard      2
+1967                Michelle Ciccolo—William Galvin      2
+1968                Michelle DuBois—Natalie Higgins      2
+1969                  Michelle DuBois—Nika Elugardo      1
+1970                 Michelle DuBois—Patricia Duffy      1
+1971                Michelle DuBois—Patricia Haddad      1
+1972                    Michelle DuBois—Paul Donato      1
+1973                  Michelle DuBois—Paul McMurtry      1
+1974                    Michelle DuBois—Paul Schmid      1
+1975                   Michelle DuBois—Peter Capano      1
+1976                       Michelle DuBois—Rady Mom      1
+1977                    Michelle DuBois—Ruth Balser      1
+1978                 Michelle DuBois—Sal DiDomenico      1
+1979                 Michelle DuBois—Sean Garballey      1
+1980                   Michelle DuBois—Shawn Dooley      1
+1981                  Michelle DuBois—Steven Howitt      1
+1982                   Michelle DuBois—Steven Owens      2
+1983                 Michelle DuBois—Steven Ultrino      1
+1984                Michelle DuBois—Susannah Whipps      1
+1985                    Michelle DuBois—Tackey Chan      3
+1986                   Michelle DuBois—Tami Gouveia      3
+1987                    Michelle DuBois—Tram Nguyen      4
+1988          Michelle DuBois—Tricia Farley-Bouvier      1
+1989                   Michelle DuBois—Vanna Howard      1
+1990                 Michelle DuBois—William Galvin      1
+1991                     Mindy Domb—Natalie Higgins      1
+1992                       Mindy Domb—Nika Elugardo      1
+1993                      Mindy Domb—Patricia Duffy      1
+1994                         Mindy Domb—Paul Donato      1
+1995                        Mindy Domb—Peter Capano      1
+1996                         Mindy Domb—Ruth Balser      1
+1997                      Mindy Domb—Sean Garballey      1
+1998                        Mindy Domb—Steven Owens      1
+1999                      Mindy Domb—Steven Ultrino      1
+2000                        Mindy Domb—Tami Gouveia      1
+2001                        Mindy Domb—Tommy Vitolo      1
+2002                         Mindy Domb—Tram Nguyen      1
+2003               Mindy Domb—Tricia Farley-Bouvier      1
+2004                        Mindy Domb—Vanna Howard      1
+2005                      Mindy Domb—William Galvin      1
+2006                  Natalie Higgins—Nika Elugardo      2
+2007                 Natalie Higgins—Patricia Duffy      2
+2008                Natalie Higgins—Patricia Haddad      1
+2009                    Natalie Higgins—Paul Donato      2
+2010                   Natalie Higgins—Peter Capano      1
+2011                       Natalie Higgins—Rady Mom      1
+2012                    Natalie Higgins—Ruth Balser      2
+2013                 Natalie Higgins—Sal DiDomenico      1
+2014                 Natalie Higgins—Sean Garballey      2
+2015                   Natalie Higgins—Steven Owens      2
+2016                 Natalie Higgins—Steven Ultrino      3
+2017                Natalie Higgins—Susannah Whipps      1
+2018                    Natalie Higgins—Tackey Chan      1
+2019                   Natalie Higgins—Tami Gouveia      2
+2020                   Natalie Higgins—Tommy Vitolo      2
+2021                    Natalie Higgins—Tram Nguyen      3
+2022          Natalie Higgins—Tricia Farley-Bouvier      3
+2023                   Natalie Higgins—Vanna Howard      2
+2024                 Natalie Higgins—William Galvin      1
+2025                   Nika Elugardo—Patricia Duffy      1
+2026                      Nika Elugardo—Paul Donato      1
+2027                     Nika Elugardo—Peter Capano      1
+2028                      Nika Elugardo—Ruth Balser      1
+2029                   Nika Elugardo—Sal DiDomenico      1
+2030                   Nika Elugardo—Sean Garballey      2
+2031                     Nika Elugardo—Steven Owens      1
+2032                   Nika Elugardo—Steven Ultrino      1
+2033                  Nika Elugardo—Susannah Whipps      1
+2034                     Nika Elugardo—Tami Gouveia      1
+2035                     Nika Elugardo—Tommy Vitolo      1
+2036                      Nika Elugardo—Tram Nguyen      2
+2037            Nika Elugardo—Tricia Farley-Bouvier      1
+2038                     Nika Elugardo—Vanna Howard      1
+2039                   Nika Elugardo—William Galvin      1
+2040                 Patricia Duffy—Patricia Haddad      1
+2041                     Patricia Duffy—Paul Donato      2
+2042                    Patricia Duffy—Peter Capano      1
+2043                        Patricia Duffy—Rady Mom      1
+2044                     Patricia Duffy—Ruth Balser      2
+2045                  Patricia Duffy—Sean Garballey      1
+2046                    Patricia Duffy—Steven Owens      2
+2047                  Patricia Duffy—Steven Ultrino      2
+2048                     Patricia Duffy—Tackey Chan      1
+2049                    Patricia Duffy—Tami Gouveia      2
+2050                    Patricia Duffy—Tommy Vitolo      1
+2051                     Patricia Duffy—Tram Nguyen      2
+2052           Patricia Duffy—Tricia Farley-Bouvier      2
+2053                    Patricia Duffy—Vanna Howard      2
+2054                  Patricia Duffy—William Galvin      1
+2055                    Patricia Haddad—Paul Donato      1
+2056                       Patricia Haddad—Rady Mom      1
+2057                    Patricia Haddad—Ruth Balser      1
+2058                   Patricia Haddad—Steven Owens      1
+2059                 Patricia Haddad—Steven Ultrino      1
+2060                    Patricia Haddad—Tackey Chan      1
+2061                   Patricia Haddad—Tami Gouveia      1
+2062                    Patricia Haddad—Tram Nguyen      1
+2063          Patricia Haddad—Tricia Farley-Bouvier      1
+2064                   Patricia Haddad—Vanna Howard      1
+2065                    Patrick Kearney—Paul Tucker      1
+2066                   Patrick Kearney—Steven Owens      1
+2067                 Patrick Kearney—Steven Xiarhos      1
+2068                Patrick Kearney—Susannah Whipps      1
+2069                   Patrick Kearney—Tami Gouveia      1
+2070                   Patrick Kearney—Vanna Howard      1
+2071                       Paul Donato—Peter Capano      1
+2072                           Paul Donato—Rady Mom      1
+2073                        Paul Donato—Ruth Balser      2
+2074                     Paul Donato—Sean Garballey      1
+2075                       Paul Donato—Steven Owens      2
+2076                     Paul Donato—Steven Ultrino      2
+2077                        Paul Donato—Tackey Chan      1
+2078                       Paul Donato—Tami Gouveia      2
+2079                       Paul Donato—Tommy Vitolo      1
+2080                        Paul Donato—Tram Nguyen      2
+2081              Paul Donato—Tricia Farley-Bouvier      2
+2082                       Paul Donato—Vanna Howard      2
+2083                     Paul Donato—William Galvin      1
+2084                       Paul Frost—Steven Howitt      1
+2085                       Paul Frost—Susan Gifford      1
+2086                      Paul McMurtry—Tackey Chan      1
+2087                       Paul Schmid—Steven Owens      1
+2088                       Paul Schmid—Tami Gouveia      1
+2089                        Paul Schmid—Tram Nguyen      1
+2090                     Paul Schmid—William Galvin      1
+2091                       Paul Tucker—Steven Owens      1
+2092                     Paul Tucker—Steven Xiarhos      1
+2093                    Paul Tucker—Susannah Whipps      1
+2094                       Paul Tucker—Tami Gouveia      1
+2095                       Paul Tucker—Vanna Howard      1
+2096                       Peter Capano—Ruth Balser      1
+2097                    Peter Capano—Sean Garballey      1
+2098                      Peter Capano—Shawn Dooley      1
+2099                     Peter Capano—Steven Howitt      1
+2100                      Peter Capano—Steven Owens      1
+2101                    Peter Capano—Steven Ultrino      1
+2102                      Peter Capano—Tami Gouveia      2
+2103                      Peter Capano—Tommy Vitolo      1
+2104                       Peter Capano—Tram Nguyen      2
+2105             Peter Capano—Tricia Farley-Bouvier      1
+2106                      Peter Capano—Vanna Howard      1
+2107                    Peter Capano—William Galvin      1
+2108                           Rady Mom—Ruth Balser      1
+2109                          Rady Mom—Steven Owens      1
+2110                        Rady Mom—Steven Ultrino      1
+2111                           Rady Mom—Tackey Chan      1
+2112                          Rady Mom—Tami Gouveia      1
+2113                           Rady Mom—Tram Nguyen      1
+2114                 Rady Mom—Tricia Farley-Bouvier      1
+2115                          Rady Mom—Vanna Howard      1
+2116                     Ruth Balser—Sean Garballey      1
+2117                       Ruth Balser—Steven Owens      2
+2118                     Ruth Balser—Steven Ultrino      2
+2119                        Ruth Balser—Tackey Chan      1
+2120                       Ruth Balser—Tami Gouveia      2
+2121                       Ruth Balser—Tommy Vitolo      1
+2122                        Ruth Balser—Tram Nguyen      2
+2123              Ruth Balser—Tricia Farley-Bouvier      2
+2124                       Ruth Balser—Vanna Howard      2
+2125                     Ruth Balser—William Galvin      1
+2126                  Sal DiDomenico—Sean Garballey      1
+2127                 Sal DiDomenico—Susannah Whipps      1
+2128                     Sal DiDomenico—Tram Nguyen      1
+2129                    Sean Garballey—Steven Owens      1
+2130                  Sean Garballey—Steven Ultrino      1
+2131                 Sean Garballey—Susannah Whipps      1
+2132                    Sean Garballey—Tami Gouveia      1
+2133                    Sean Garballey—Tommy Vitolo      1
+2134                     Sean Garballey—Tram Nguyen      2
+2135           Sean Garballey—Tricia Farley-Bouvier      1
+2136                    Sean Garballey—Vanna Howard      1
+2137                  Sean Garballey—William Galvin      1
+2138                     Shawn Dooley—Steven Howitt      1
+2139                      Shawn Dooley—Tami Gouveia      1
+2140                       Shawn Dooley—Tram Nguyen      1
+2141                Sheila Harrington—Steven Howitt      1
+2142        Sheila Harrington—Tricia Farley-Bouvier      1
+2143                 Sheila Harrington—Vanna Howard      1
+2144                    Steven Howitt—Susan Gifford      1
+2145                     Steven Howitt—Tami Gouveia      1
+2146                      Steven Howitt—Tram Nguyen      1
+2147            Steven Howitt—Tricia Farley-Bouvier      1
+2148                     Steven Howitt—Vanna Howard      1
+2149                    Steven Owens—Steven Ultrino      2
+2150                    Steven Owens—Steven Xiarhos      1
+2151                   Steven Owens—Susannah Whipps      1
+2152                       Steven Owens—Tackey Chan      1
+2153                      Steven Owens—Tami Gouveia      5
+2154                      Steven Owens—Tommy Vitolo      1
+2155                       Steven Owens—Tram Nguyen      3
+2156             Steven Owens—Tricia Farley-Bouvier      2
+2157                      Steven Owens—Vanna Howard      3
+2158                    Steven Owens—William Galvin      2
+2159                     Steven Ultrino—Tackey Chan      1
+2160                    Steven Ultrino—Tami Gouveia      2
+2161                    Steven Ultrino—Tommy Vitolo      2
+2162                     Steven Ultrino—Tram Nguyen      2
+2163           Steven Ultrino—Tricia Farley-Bouvier      3
+2164                    Steven Ultrino—Vanna Howard      2
+2165                  Steven Ultrino—William Galvin      1
+2166                 Steven Xiarhos—Susannah Whipps      1
+2167                    Steven Xiarhos—Tami Gouveia      1
+2168                    Steven Xiarhos—Vanna Howard      1
+2169                   Susannah Whipps—Tami Gouveia      1
+2170                    Susannah Whipps—Tram Nguyen      1
+2171                   Susannah Whipps—Vanna Howard      1
+2172                       Tackey Chan—Tami Gouveia      1
+2173                        Tackey Chan—Tram Nguyen      1
+2174              Tackey Chan—Tricia Farley-Bouvier      1
+2175                       Tackey Chan—Vanna Howard      1
+2176                      Tami Gouveia—Tommy Vitolo      1
+2177                       Tami Gouveia—Tram Nguyen      4
+2178             Tami Gouveia—Tricia Farley-Bouvier      2
+2179                      Tami Gouveia—Vanna Howard      3
+2180                    Tami Gouveia—William Galvin      2
+2181                       Tommy Vitolo—Tram Nguyen      1
+2182             Tommy Vitolo—Tricia Farley-Bouvier      2
+2183                      Tommy Vitolo—Vanna Howard      1
+2184                    Tommy Vitolo—William Galvin      1
+2185              Tram Nguyen—Tricia Farley-Bouvier      2
+2186                       Tram Nguyen—Vanna Howard      2
+2187                     Tram Nguyen—William Galvin      2
+2188             Tricia Farley-Bouvier—Vanna Howard      3
+2189           Tricia Farley-Bouvier—William Galvin      1
+2190                    Vanna Howard—William Galvin      1</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/create_adjMatrix-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/create_adjMatrix-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/create_adjMatrix-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/create_adjMatrix-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/create_adjMatrix-5.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/create_adjMatrix_p2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/create_adjMatrix_p2-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/make_edgeList_networkObject-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/make_edgeList_networkObject-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/make_edgeList_networkObject-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/make_edgeList_networkObject-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/basic_network_vizs-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/basic_network_vizs-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/basic_network_vizs-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/basic_network_vizs-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.00   16.00   31.00   30.16   46.00   68.00 </code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/measuring_centralization-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$breaks
+[1]  0 10 20 30 40 50 60 70
+
+$counts
+[1] 16 15 12 15 19  7  3
+
+$density
+[1] 0.018390805 0.017241379 0.013793103 0.017241379 0.021839080 0.008045977
+[7] 0.003448276
+
+$mids
+[1]  5 15 25 35 45 55 65
+
+$xname
+[1] "RepsList$degree"
+
+$equidist
+[1] TRUE
+
+attr(,"class")
+[1] "histogram"</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+ℹ Please use `linewidth` instead.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/measuring_centralization-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Global.Clustering.Coefficient Average.Local.Clustering.Coefficient Density
+1                          0.75                                0.847   0.351
+  Degree.Centralization Closeness.Centralization Betweenness.Centralization
+1                  0.44                    0.484                      0.091</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Network attributes:
+  vertices = 87
+  directed = FALSE
+  hyper = FALSE
+  loops = FALSE
+  multiple = FALSE
+  bipartite = FALSE
+ total edges = 1312 
+   missing edges = 0 
+   non-missing edges = 1312 
+ density = 0.3507084 
+
+Vertex attributes:
+
+ full_name:
+   character valued attribute
+   attribute summary:
+   the 10 most common values are:
+        Adam Scanlon        Adrian Madaro        Andres Vargas 
+                   1                    1                    1 
+     Angelo D'Emilia       Angelo Puppolo       Antonio Cabral 
+                   1                    1                    1 
+       Bradley Jones Brandy Fluker Oakley           Brian Ashe 
+                   1                    1                    1 
+        Brian Murray 
+                   1 
+
+ geo_setting:
+   character valued attribute
+   attribute summary:
+rural urban 
+   28    59 
+
+ party:
+   character valued attribute
+   attribute summary:
+  Democrat Republican Unenrolled 
+        71         15          1 
+  vertex.names:
+   character valued attribute
+   87 valid vertex names
+
+Edge attributes:
+
+ weight:
+   numeric valued attribute
+   attribute summary:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  1.000   1.000   1.000   1.249   1.000   5.000 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Position Clustering:
+
+    Equivalence function: sedist 
+    Equivalence metric: hamming 
+    Cluster method: complete 
+    Graph order: 87 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>               Length Class  Mode     
+cluster         7     hclust list     
+metric          1     -none- character
+equiv.fun       1     -none- character
+cluster.method  1     -none- character
+glabels        87     -none- character
+plabels        87     -none- character</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/summarizing_plotting_SE-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/summarizing_plotting_SE-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/summarizing_plotting_SE-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/summarizing_plotting_SE-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/summarizing_plotting_SE-5.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/plotting_blockmodels-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/more_plotting_blkmodels-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/plotting_network_roles-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/dendrograms_p1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/dendrograms_p2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/dendrograms_p3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>      role degree degree.wt bonpow betweenness close constraint  eigen eigen.rc
+ [1,]    1     21        21  -0.88         7.5  0.55      0.119 0.0556  0.00108
+ [2,]    2     46        64  -1.11         9.6  0.67      0.087 0.1542  0.00386
+ [3,]    3     10        11  -1.08         3.0  0.48      0.259 0.0145  0.00056
+ [4,]    4      3         3  -0.19         0.0  0.43      0.688 0.0062  0.00014
+ [5,]    5     45        60  -1.11        31.4  0.67      0.085 0.1333  0.00355
+ [6,]    6     29        29  -0.71         9.3  0.58      0.102 0.0979  0.00159
+ [7,]    7     17        17  -0.97        11.8  0.54      0.157 0.0378  0.00082
+ [8,]    8     42        48  -1.29         8.1  0.64      0.087 0.1421  0.00284
+ [9,]    9     56        76  -1.23       121.4  0.74      0.075 0.1454  0.00439
+[10,]   10     36        44  -1.19         7.5  0.61      0.095 0.1170  0.00252
+[11,]   11     27        32  -0.70        10.3  0.58      0.105 0.0743  0.00167
+[12,]   12     36        36  -0.75        13.1  0.61      0.092 0.1249  0.00211
+[13,]   13     66        98  -0.87       156.7  0.81      0.069 0.1768  0.00563
+[14,]   14     28        31  -0.96        50.2  0.58      0.109 0.0644  0.00171
+[15,]   15     56        82  -0.76        51.3  0.74      0.076 0.1680  0.00478
+[16,]   16     47        55  -0.97        54.3  0.67      0.082 0.1376  0.00339
+[17,]   17     38        40  -0.99        31.9  0.62      0.089 0.1260  0.00241
+[18,]   18     68       106  -1.37       359.9  0.83      0.068 0.1700  0.00678
+[19,]   19     38        44  -1.11         3.7  0.63      0.091 0.1318  0.00265
+[20,]   20     49        54  -1.10        36.5  0.69      0.077 0.1511  0.00309
+[21,]   21     49        61  -1.31       164.8  0.69      0.076 0.1313  0.00341
+[22,]   22     52        64  -1.40        68.0  0.69      0.078 0.1509  0.00379
+[23,]   23     50        85   0.38       103.7  0.69      0.082 0.1581  0.00511
+[24,]   24     52        75  -1.29       134.5  0.70      0.080 0.1419  0.00471
+[25,]   25     49        77  -0.97        19.8  0.69      0.083 0.1585  0.00471
+[26,]   26     13        13  -0.73         0.0  0.50      0.146 0.0437  0.00064
+[27,]   27     29        36  -0.76       140.7  0.59      0.110 0.0603  0.00207
+[28,]   28     59        97  -0.86       119.0  0.75      0.075 0.1657  0.00581
+[29,]   29     58       103  -0.52        62.8  0.75      0.076 0.1704  0.00629
+[30,]   30     56        79  -1.36       127.0  0.74      0.074 0.1634  0.00478
+[31,]   31     66        90  -0.86       355.1  0.81      0.066 0.1708  0.00510
+      eigen.dc  n
+ [1,]    0.054  5
+ [2,]    0.150 10
+ [3,]    0.014  7
+ [4,]    0.006 12
+ [5,]    0.130  1
+ [6,]    0.096  5
+ [7,]    0.037 10
+ [8,]    0.139  2
+ [9,]    0.141  1
+[10,]    0.114  2
+[11,]    0.073  1
+[12,]    0.123  7
+[13,]    0.171  1
+[14,]    0.063  3
+[15,]    0.163  1
+[16,]    0.134  1
+[17,]    0.124  2
+[18,]    0.163  1
+[19,]    0.129  2
+[20,]    0.148  2
+[21,]    0.128  1
+[22,]    0.147  1
+[23,]    0.153  1
+[24,]    0.137  1
+[25,]    0.154  1
+[26,]    0.043  1
+[27,]    0.058  1
+[28,]    0.160  1
+[29,]    0.164  1
+[30,]    0.159  1
+[31,]    0.166  1</code></pre>
+</div>
+</div>
 </section>
 <section id="interview-and-observation-of-massachusetts-senate-20232024" class="level1">
 <h1>Interview and Observation of Massachusetts Senate, 2023–2024</h1>

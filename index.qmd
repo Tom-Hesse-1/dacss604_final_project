@@ -199,6 +199,53 @@ BillsList.el.df <- BillsList.el.df %>%
 BillsList.el <- as.matrix(BillsList.el.df)
 ```
 
+```{r create_adjMatrix}
+#creating adjacency matrix from edgelist
+
+g1 <- graph_from_data_frame(BillsList.el.df)
+g1.1 <- as_adjacency_matrix(g1,sparse = FALSE, attr = "weight")
+
+#symmetrizing the matrix
+g1.2 <- (g1.1) + t(g1.1)
+
+#creating rough visualization
+par(mar = c(0, 0, 0, 0))
+gplot(g1.1,
+      mode = "circle")
+
+#adding jitter
+par(mar = c(0, 0, 0, 0))
+gplot(g1.1,
+      mode = "circle",
+      jitter = T)
+#did basically nothing
+
+#removing circle mode
+par(mar = c(0, 0, 0, 0))
+gplot(g1.1,
+      jitter = T)
+
+#not much better
+#using line segments instead of arrows for edges, since network is undirected
+par(mar = c(0, 0, 0, 0))
+gplot(g1.1,
+      jitter = T,
+      usearrows = F)
+
+#still trying to make visualization more readable
+#making nodes smaller
+#curving edges
+par(mar = c(0, 0, 0, 0))
+gplot(g1.1,
+      jitter = T,
+      usearrows = F,
+      vertex.cex = 0.5,
+      usecurve = T)
+
+#Vertices too small
+#curved edges too small
+```
+
 ```{r create_adjMatrix_p2}
 #switching to iGraph method
 #rough visualization of the network
