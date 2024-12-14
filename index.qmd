@@ -26,7 +26,7 @@ The qualitative portion of this project examines political cooperation in Massac
 
 # Network Analysis of Massachusetts House of Representatives, 2021–2022
 
-```{r load_packages}
+```{r load_packages, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 #loading packages
 
 library(tidyverse)
@@ -38,6 +38,8 @@ library(stringi)
 library(GGally)
 library(blockmodeling)
 library(ggplot2)
+library(knitr)
+library(kableExtra)
 ```
 
 ```{r load_data}
@@ -161,7 +163,6 @@ result <- stack(table(unlist(apply(BillsList[-1], 1, function(x) {
                  if(length(vec) < 2) return(NULL)
                   combn(vec, 2, function(y) paste0(sort(y), collapse = '—'))
             }))))[2:1]
-result
 
 BillsList.el <- as.matrix(separate(result, ind, c('nodeA', 'nodeB'), sep = '—'))
 
@@ -208,40 +209,6 @@ g1.1 <- as_adjacency_matrix(g1,sparse = FALSE, attr = "weight")
 #symmetrizing the matrix
 g1.2 <- (g1.1) + t(g1.1)
 
-#creating rough visualization
-par(mar = c(0, 0, 0, 0))
-gplot(g1.1,
-      mode = "circle")
-
-#adding jitter
-par(mar = c(0, 0, 0, 0))
-gplot(g1.1,
-      mode = "circle",
-      jitter = T)
-#did basically nothing
-
-#removing circle mode
-par(mar = c(0, 0, 0, 0))
-gplot(g1.1,
-      jitter = T)
-
-#not much better
-#using line segments instead of arrows for edges, since network is undirected
-par(mar = c(0, 0, 0, 0))
-gplot(g1.1,
-      jitter = T,
-      usearrows = F)
-
-#still trying to make visualization more readable
-#making nodes smaller
-#curving edges
-par(mar = c(0, 0, 0, 0))
-gplot(g1.1,
-      jitter = T,
-      usearrows = F,
-      vertex.cex = 0.5,
-      usecurve = T)
-
 #Vertices too small
 #curved edges too small
 ```
@@ -253,15 +220,9 @@ pol_net <- graph_from_data_frame(d = BillsList.el,
                                  directed = F)
 
 
-plot(pol_net)
-
 #making nodes smaller
 #removing node labels
 #rough visualization of the network
-
-plot(pol_net,
-     vertex.size = 10,
-     vertex.label = NA)
 
 #Conclusion: Whole network has too many nodes & Edges for meaningful visualizations
 #Next Steps: select top 5, 10, 15 nodes in terms of edges and visualize only them
@@ -330,26 +291,15 @@ BillsList.el.df_deg20 <- BillsList.el.df %>%
 
 graph_deg5 <- graph_from_data_frame(BillsList.el.df_deg5,
                            directed = FALSE)
-plot(graph_deg5,
-     edge.width = BillsList.el.df_deg5$weight*2)
 
 graph_deg10 <- graph_from_data_frame(BillsList.el.df_deg10,
                            directed = FALSE)
-plot(graph_deg10,
-     edge.width = BillsList.el.df_deg10$weight*2
-     )
 
 graph_deg15 <- graph_from_data_frame(BillsList.el.df_deg15,
                            directed = FALSE)
-plot(graph_deg15,
-     edge.width = BillsList.el.df_deg15$weight*2
-     )
 
 graph_deg20 <- graph_from_data_frame(BillsList.el.df_deg20,
                            directed = FALSE)
-plot(graph_deg20,
-     edge.width = BillsList.el.df_deg20$weight*1
-     )
 
 #Rough, basic visualizations have been created for each of the new network objects
 #next, improving them visually
@@ -360,108 +310,40 @@ plot(graph_deg20,
 
 #node color = geographic setting type
 #node shape = party
-  #top 5 degree nodes
-cols_deg5 <- case_when(RepsList_deg5$classification == "urban" ~ "red",
-                  RepsList_deg5$classification == "rural" ~ "blue")
-shapes_deg5 <- case_when(RepsList_deg5$Party == "Democrat" ~ "square",
-                         RepsList_deg5$Party == "Republican" ~ "circle")
 
   #top 10 degree nodes
-cols_deg10 <- case_when(RepsList_deg10$classification == "urban" ~ "red",
-                  RepsList_deg10$classification == "rural" ~ "blue")
-shapes_deg10 <- case_when(RepsList_deg10$Party == "Democrat" ~ "square",
-                         RepsList_deg10$Party == "Republican" ~ "circle")
+shapes_deg10 <- case_when(RepsList_deg10$classification == "urban" ~ "square",
+                  RepsList_deg10$classification == "rural" ~ "circle")
+cols_deg10 <- case_when(RepsList_deg10$Party == "Democrat" ~ "blue",
+                         RepsList_deg10$Party == "Republican" ~ "red")
 
-  #top 15 degree nodes
-cols_deg15 <- case_when(RepsList_deg15$classification == "urban" ~ "red",
-                  RepsList_deg15$classification == "rural" ~ "blue")
-shapes_deg15 <- case_when(RepsList_deg15$Party == "Democrat" ~ "square",
-                         RepsList_deg15$Party == "Republican" ~ "circle")
-
-  #top 20 degree nodes
-cols_deg20 <- case_when(RepsList_deg20$classification == "urban" ~ "red",
-                  RepsList_deg20$classification == "rural" ~ "blue")
-shapes_deg20 <- case_when(RepsList_deg20$Party == "Democrat" ~ "square",
-                         RepsList_deg20$Party == "Republican" ~ "circle")
-
-#assigning colors to new network graphs
-  #top 5 degree nodes
-V(graph_deg5)$color <- cols_deg5
-V(graph_deg5)$shape <- shapes_deg5
-plot(graph_deg5,
-     vertex.size = 0.5*RepsList_deg5$degree,
-     edge.width = BillsList.el.df_deg5$weight*1)
+par(bg = "grey94") 
 
   #top 10 degree nodes
 V(graph_deg10)$color <- cols_deg10
 V(graph_deg10)$shape <- shapes_deg10
-plot(graph_deg10,
-     vertex.size = 0.5*RepsList_deg10$degree,
-     edge.width = BillsList.el.df_deg10$weight*1)
+net10_plot <- plot(graph_deg10,
+                   vertex.size = 0.5*RepsList_deg10$degree,
+                   vertex.label.color = "white",
+                   vertex.lablel.bg = "black",
+                   edge.width = BillsList.el.df_deg10$weight*1,
+                   main = "The 10 Most Central (Connected) Nodes",
+                   sub = "Heterogenous Composition of Rural and Urban Representatives")
 
-  #top 15 degree nodes
-V(graph_deg15)$color <- cols_deg15
-V(graph_deg15)$shape <- shapes_deg15
-plot(graph_deg15,
-     vertex.size = 0.5*RepsList_deg15$degree,
-     edge.width = BillsList.el.df_deg15$weight*1)
+net10_plot
 
-  #top 20 degree nodes
-V(graph_deg20)$color <- cols_deg20
-V(graph_deg20)$shape <- shapes_deg20
-plot(graph_deg20,
-     vertex.size = 0.5*RepsList_deg20$degree,
-     edge.width = BillsList.el.df_deg20$weight*1)
-```
+legend("topright", 
+       legend = c("Democrat", "Republican"), 
+       fill = c("blue", "red"), 
+       title = "Party",
+       border = "black")
 
-```{r measuring_centralization}
-#looking at distribution of node degree
-pol_deg_sum <- summary(RepsList$degree)
-pol_deg_sum
-
-pol_deg_hist <- hist(RepsList$degree)
-pol_deg_hist
-
-pol_deg_hist1 <- ggplot(RepsList,
-                        aes(x = degree)) +
-  geom_histogram(binwidth = 5,
-                 color = "black",
-                 fill = "grey57",
-                 size = 0.75) +
-  labs(x = "Node Degree",
-       y = "Count") +
-  ggtitle("Histogram of Degree Nodes of MA State Representatives") +
-  scale_y_continuous(breaks = seq(0, 14, 2)) +
-  scale_x_continuous(breaks = seq(0, 80, 10))
-pol_deg_hist1
-
-#degree are skewed right, with wide range
-
-#global clustering coefficient
-pol_gl_tran <- transitivity(pol_net, type = "global")
-#average local clustering coefficient
-pol_avg_tran <- transitivity(pol_net, type = "average")
-
-#graph density
-pol_dens <- edge_density(pol_net)
-
-#graph degree centralization
-pol_deg_cent <- centr_degree(pol_net, mode = "all")
-
-#graph closeness centralization
-pol_cls_cent <- centr_clo(pol_net)
-
-#graph betwenness centralization
-pol_btw_cent <- centr_betw(pol_net, directed = FALSE)
-
-#creating dataframe to showcase all measures
-cent_df <- data.frame("Global Clustering Coefficient" = round(pol_gl_tran, 3),
-                      "Average Local Clustering Coefficient" = round(pol_avg_tran, 3),
-                      "Density" = round(pol_dens, 3),
-                      "Degree Centralization" = round(pol_deg_cent$centralization, 3),
-                      "Closeness Centralization" = round(pol_cls_cent$centralization, 3),
-                      "Betweenness Centralization" = round(pol_btw_cent$centralization, 3))
-cent_df
+legend("bottomleft", 
+       legend = c("Urban", "Rural"), 
+       pch = c(15, 16),  # Square for Urban, Circle for Rural
+       col = c("black", "black"), 
+       title = "Geographic Setting",
+       pt.bg = c("blue", "red"))
 ```
 
 ```{r create_statnet_objects}
@@ -472,7 +354,6 @@ pol_net.stat <- as.network(x = g1.2,
                            names.eval = "weight",
                            loops = F,
                            matrix.type = "adjacency")
-
 ```
 
 ```{r set_node_attributes}
@@ -487,10 +368,6 @@ set.vertex.attribute(pol_net.stat,
 set.vertex.attribute(pol_net.stat,
                      "geo_setting",
                      RepsList$classification)
-
-#viewing summary of network
-summary.network(pol_net.stat,
-                print.adj = F)
 ```
 
 ```{r struct_equiv_blk_mdl}
@@ -530,37 +407,6 @@ pol_net.nodes <- full_join(pol_net.nodes, get.eigen(pol_net.stat), by="name")
 pol_net.sedist <- blockmodeling::sedist(g1.2)
 pol_net.se <- sna::equiv.clust(pol_net.stat, 
                         equiv.dist = pol_net.sedist)
-
-pol_net.se
-```
-
-```{r summarizing_plotting_SE}
-#summarizing SE
-summary(pol_net.se)
-
-#plotting SE
-plot(pol_net.se)
-
-#plotting with labels and partitioning
-plot(pol_net.se, labels = pol_net.se$glabels)
-rect.hclust(pol_net.se$cluster, k = 2)
-
-#cut at 15
-plot(pol_net.se, labels = pol_net.se$glabels)
-rect.hclust(pol_net.se$cluster, h = 15)
-
-#cut at 10
-plot(pol_net.se, labels = pol_net.se$glabels)
-rect.hclust(pol_net.se$cluster, h = 10)
-
-#cut at 5
-plot(pol_net.se, labels = pol_net.se$glabels)
-rect.hclust(pol_net.se$cluster, h = 5)
-```
-
-```{r}
-plot(pol_net.se, labels = pol_net.se$glabels)
-rect.hclust(pol_net.se$cluster, h=10)
 ```
 
 ```{r calcing_blockmodeling}
@@ -571,29 +417,6 @@ pol_net.stat%v%"role" <- blk_mod1$block.membership[match(pol_net.stat%v%"vertex.
                                                          blk_mod1$plabels)]
 ```
 
-```{r plotting_blockmodels}
-#plotting blockmodel
-plot(blk_mod1)
-
-#difficult to read, using plot function from tutorial
-plot.block<-function(x=blk_mod, main=NULL, cex.lab=1){
-  plot.sociomatrix(x$blocked.data, labels=list(x$plabels,x$plabels),
-                   main=main, drawlines = FALSE, cex.lab=cex.lab)
-  for (j in 2:length(x$plabels)) if (x$block.membership[j] !=
-                                     x$block.membership[j-1]) 
-    abline(v = j - 0.5, h = j - 0.5, lty = 3, xpd=FALSE)
-}
-```
-
-```{r more_plotting_blkmodels}
-#Plotting using new function
-plot.block(blk_mod1,
-           main = "MA State Representatives Collaboration: 5 Partitions",
-           cex.lab = 1)
-#Still too crowded to get insights from
-#moving onto visualization
-```
-
 ```{r plotting_network_roles}
 #plotting network
 block_plot1 <- ggnet2(pol_net.stat,
@@ -602,8 +425,6 @@ block_plot1 <- ggnet2(pol_net.stat,
        node.label = F,
        node.shape = "geo_setting",
        node.alpha = 0.7)
-
-block_plot1
 ```
 
 ```{r dendrograms_p1}
@@ -620,8 +441,6 @@ block_plot2 <- ggnet2(pol_net.stat,
        node.label = F,
        node.shape = "geo_setting",
        node.alpha = 0.7)
-
-block_plot2
 ```
 
 ```{r dendrograms_p2}
@@ -638,14 +457,12 @@ block_plot3 <- ggnet2(pol_net.stat,
        node.label = F,
        node.shape = "geo_setting",
        node.alpha = 0.7)
-
-block_plot3
 ```
 
 ```{r dendrograms_p3}
 #cut height 5
 
-blk_mod4 <- blockmodel(pol_net.stat, pol_net.se, h=5)
+blk_mod4 <- blockmodel(pol_net.stat, pol_net.se, k=10)
 pol_net.stat%v%"role" <- blk_mod4$block.membership[match(pol_net.stat%v%"vertex.names",
                                                          blk_mod4$plabels)]
 
@@ -656,22 +473,65 @@ block_plot4 <- ggnet2(pol_net.stat,
        node.label = F,
        node.shape = "geo_setting",
        node.alpha = 0.7)
-
-block_plot4
 ```
 
 ```{r}
 pol_net.nodes$role <- pol_net.stat%v%"role"
 ```
 
-```{r}
-pol_net.nodes %>%
+```{r dendrograms_p4}
+#cut 10 groups
+
+blk_mod5 <- blockmodel(pol_net.stat,
+                       pol_net.se,
+                       k=5)
+pol_net.stat%v%"role" <- blk_mod5$block.membership[match(pol_net.stat%v%"vertex.names",
+                                                         blk_mod5$plabels)]
+
+#visualizing
+block_plot5 <- ggnet2(pol_net.stat,
+       node.color = "role",
+       node.size = degree(pol_net.stat, gmode = "graph"),
+       node.label = F,
+       node.shape = "geo_setting",
+       node.alpha = 0.7)
+```
+
+```{r node_measures, results='hide'}
+nodes_measures <- pol_net.nodes %>%
   select(-name) %>%
   group_by(role) %>%
   mutate(n=n()) %>%
   summarise_all(mean, na.rm = TRUE) %>%
   as.matrix() %>%
   print(digits=2)
+```
+
+```{r create_blkmdl_tables}
+
+#creating tables to show block membership
+
+pol_net.nodes <- pol_net.nodes %>%
+  mutate(name = as.numeric(name)) %>%
+  select(name,
+         role)
+
+blk_mdl_tbl <- RepsList %>%
+  left_join(pol_net.nodes,
+            by = join_by(id == name)) %>%
+  group_by(role) %>%
+  rename("Group" = "role") %>%
+  summarise(Rural = sum(classification == "rural"),
+         Urban = sum(classification == "urban"),
+         Democrat = sum(Party == "Democrat"),
+         Republican = sum(Party == "Republican")) %>%
+  mutate("Rural:Urban_Ratio" = Rural/Urban,
+         "Democrat:Republican_Ratio" = Democrat/Republican)
+
+#blk_mdl_tbl <- kable(blk_mdl_tbl, caption = "Blockmodel Group Statistics", digits = 2, format = "markdown") %>%
+ # kable_styling("striped", full_width = FALSE) %>%
+#  border_color("black")
+#blk_mdl_tbl
 ```
 
 # Interview and Observation of Massachusetts Senate, 2023–2024
