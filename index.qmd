@@ -328,7 +328,8 @@ net10_plot <- plot(graph_deg10,
                    vertex.lablel.bg = "black",
                    edge.width = BillsList.el.df_deg10$weight*1,
                    main = "The 10 Most Central (Connected) Nodes",
-                   sub = "Heterogenous Composition of Rural and Urban Representatives")
+                   sub = "Heterogenous Composition of Rural and Urban Representatives",
+                   curved = 0.2)
 
 net10_plot
 
@@ -528,10 +529,9 @@ blk_mdl_tbl <- RepsList %>%
   mutate("Rural:Urban_Ratio" = Rural/Urban,
          "Democrat:Republican_Ratio" = Democrat/Republican)
 
-#blk_mdl_tbl <- kable(blk_mdl_tbl, caption = "Blockmodel Group Statistics", digits = 2, format = "markdown") %>%
- # kable_styling("striped", full_width = FALSE) %>%
-#  border_color("black")
-#blk_mdl_tbl
+blk_mdl_tbl <- kable(blk_mdl_tbl, caption = "Blockmodel Group Statistics", digits = 2, format = "markdown")
+
+blk_mdl_tbl
 ```
 
 # Interview and Observation of Massachusetts Senate, 2023–2024
