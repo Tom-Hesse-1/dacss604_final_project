@@ -24,7 +24,7 @@ The quantitative portion of the project examines political cooperation in Massac
 
 The qualitative portion of this project examines political cooperation in Massachusetts' Senate during the 193rd General Court, which was in session throughout 2023 and 2024. The primary methods included in this portion of the project were an interview with a political insider—a senior member of a Massachusetts State Senator's staff—and ethnographic observation of legislative sessions. This portion of the project focused on adding depth of understanding to the patterns observed in the quantitative portion. The interview and observation sessions gave deeper insight into what political cooperation in Massachusetts state politics looks like, and even why we see the patterns that we do.
 
-# Network Analysis of Massachusetts House of Representatives, 2021–2022
+## Network Analysis of Massachusetts House of Representatives, 2021–2022
 
 ```{r load_packages, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 #loading packages
@@ -534,4 +534,4 @@ blk_mdl_tbl <- kable(blk_mdl_tbl, caption = "Blockmodel Group Statistics", digit
 blk_mdl_tbl
 ```
 
-# Interview and Observation of Massachusetts Senate, 2023–2024
+## Interview and Observation of Massachusetts Senate, 2023–2024
