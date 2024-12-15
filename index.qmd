@@ -6,11 +6,11 @@ execute:
 
 # Polarization, Division: The New American Norm?
 
-\[Topic Sentence Here\]. To even casual observers, polarization and division seem to characterize American politics. Bitter political cleavages have been formed along the lines of several factors: political ideologies (**Source**), age groups (**Source**), racial/ethnic identities (**Source**), and more. One divide stands out as particularly stark: geography. Rural and Urban politics are particularly polarized. Americans living in different types of geographic settings have opposing ideas on political issues (**Source**). *Give examples polarization*.
+\[Topic Sentence Here\]. To even casual observers, polarization and division seem to characterize American politics. Bitter political cleavages have been formed along the lines of several factors: political ideologies (Deane & Gramlich, 2020), age groups (Pew Research Center, 2018), racial/ethnic identities (Silver et al., 2021), and more. One divide stands out as particularly stark: geography. Rural and Urban politics are particularly polarized. Americans living in different types of geographic settings have opposing ideas on political issues (Mettler & Brown, 2022; Savat, 2020, Gimpel et al., 2020).
 
-*Paragraph about geographic polarization/division in general. Cite studies of issue in Italy, France.*
+Geography can have strong associations with political ideologies. Scholars have identified a cleavage in political opinions of rural- and urban-dwelling Americans in recent years (Mettler & Brown, 2022; Savat, 2020). Rural voters strongly support Republican candidates (Gimpel et al., 2020), support greater restriction of the press (Mettler & Brown, 2022), and tend to be more resistant to new ideas in governance (Savat, 2020). Similar cleavages have been observed in other countries. Pairigi & Sartori (2014) found a similar cleavage based on geography in Italian national politics in the 1970s. Furthermore, Brookes & Cappellina have found evidence of a rural-urban divide in French politics in recent years. Significant evidence shows that geography can be a powerful force in politics, with the potential to cause harmful division.
 
-Political division has wide-reaching negative effects on both individuals and groups (**Sources**). *Give examples of such negative effects*. Predictions have been made that such polarization may deepen in coming years **(source)**. This division and polarization is established and worrisome, but much of the research examines politics at the national level: what about politics at the state level? This project contributes to the investigation of this question.
+Political division has wide-reaching negative effects, such as increased hostilities between factions and extremist beliefs. (Mettler & Brown, 2022). Predictions have been made that such polarization may deepen in coming years (Heltzel & Laurin, 2020). This division and polarization is established and worrisome, but much of the research examines US politics at the national level: what about politics at the state level? This project contributes to the investigation of this question.
 
 # This Project
 
@@ -24,7 +24,7 @@ This project uses a mixed methods approach (utilizing both quantitative and qual
 
 ## Quantitative: Network Analysis of Massachusetts House of Representatives, 2021–2022
 
-The quantitative portion of the project examines political cooperation in the Massachusetts House of Representatives during the 192nd General Court (the name of Massachusetts' legislature). This legislative body was in session throughout 2021 and 2022. The primary method of investigation was a network analysis of this body. *Brief Primer on network theory/analysis.*
+The quantitative portion of the project examines political cooperation in the Massachusetts House of Representatives during the 192nd General Court (the name of Massachusetts' legislature). This legislative body was in session throughout 2021 and 2022. The primary method of investigation was a network analysis of this body. Network analysis is a tool in Network Theory. Network theory is a branch of the social sciences that examines how entities within a group (i.e. network) are connected to each other. Within these networks, entities are represented by "nodes", and are connected by "edges." Nodes can represent many things, such as individual people, governments, social groups, etc. Edges can similarly take many different forms. Edges can represent shared beliefs, conversations between individuals, banking transactions, etc. The specifics vary from project to project, but the essence of network analysis is the study of groups (networks) and their interactions and structures.
 
 In this project, nodes represent individual representatives (legislators) in the 192nd General Court, and edges represent the cosponsoring of a bill. For example, if Representative A and Representative B both sponsor bill X, then there would be an edge between those two representatives. In this project, edges are **weighted**. If edges are weighted, it means that they have a value associated with them, representing some measurement. In this project, edge weight represents how many bills two nodes cosponsored. For instance, in the previous scenario, Representative A and Representative B cosponsored one bill, therefore the weight of the edge connecting them would be equal to one. In another hypothetical example, Representative B and Representative C cosponsored three of the same bills, therefore the weight of the edge between them would be equal to three. The data consists of 87 nodes (individual representatives) and 50 bills that formed edges (connections) between those representatives. All bills were introduced during the 192nd General Court.
 
@@ -585,7 +585,7 @@ Analysis of these observational sessions was done by breaking down the speeches 
 
 **Figure 3:**
 
-![](images/Ethnography Notes & Memo Codes - Percentage Coverage.png){fig-align="center"}
+![](images/Ethnography%20Notes%20&%20Memo%20Codes%20-%20Percentage%20Coverage.png){fig-align="center"}
 
 # Discussion
 
@@ -602,3 +602,24 @@ These results, when considered in tandem, paint a picture of a legislature where
 This project does not find support for a rural-urban divide in Massachusetts state politics. There are limitations to these findings. Firstly, this project only examines Massachusetts legislative politics in very recent years. It is not known whether these insights can be extrapolated to less recent sessions of The General Court. Furthermore, there are numerous ways to measure political collaboration and division, and this project utilizes only a small number of the possible methods. Other methods may yield different results; this, too, is unknowable based on this study alone. Future research could use different methods, such as more direct investigation of political attitudes among rural Massachusetts residents vs urban residents.
 
 These limitations do not necessarily detract from this project's findings, however. This project measures a small number of phenomena, but it finds promising results. The legislature is a central component of American government, both at the federal and state levels. Given that the rural-urban divide has proven to be a significant issue in recent years at the federal level, the evidence of its absence in Massachusetts' legislature, as provided here, is a hopeful indicator that political collaboration between rural and urban districts—and by extension, the residents of those districts—is alive and well in The Bay State.
+
+# References
+
+Brookes, K., & Cappellina, B. (2023). Political behaviour in France: the impact of the rural–urban divide. *French Politics*, *21*(1), 104–124. https://doi.org/10.1057/s41253-022-00204-x
+
+Deane, C., & Gramlich, J. (2020, November 6). *2020 election reveals two broad voting coalitions fundamentally at odds*. Pew Research Center; Pew Research Center. https://www.pewresearch.org/short-reads/2020/11/06/2020-election-reveals-two-broad-voting-coalitions-fundamentally-at-odds/
+
+Gimpel, J. G., Lovin, N., Moy, B., & Reeves, A. (2020). The Urban–Rural Gulf in American Political Behavior. *Political Behavior*, *42*. https://doi.org/10.1007/s11109-020-09601-w
+
+Heltzel, G., & Laurin, K. (2020). Polarization in America: Two Possible Futures. *Current Opinion in Behavioral Sciences*, *34*(1), 179–184. https://doi.org/10.1016/j.cobeha.2020.03.008
+
+Mettler, S., & Brown, T. (2022). The Growing Rural-Urban Political Divide and\
+Democratic Vulnerability. The ANNALS of the American Academy of Political and Social Science, 699(1), 130–142. <https://doi.org/10.1177/00027162211070061>
+
+Parigi, P., & Sartori, L. (2014). The political party as a network of cleavages: Disclosing the inner structure of Italian political parties in the seventies. *Social Networks*, *36*(36), 54–65. https://doi.org/10.1016/j.socnet.2012.07.005
+
+Pew Research Center. (2018, March 1). *The Generation Gap in American Politics*. Pew Research Center; Pew Research Center. https://www.pewresearch.org/politics/2018/03/01/the-generation-gap-in-american-politics/
+
+Savat, S. (2020, February 18). *The divide between us: Urban-rural political differences rooted in geography*. The Source; Washington University. https://source.washu.edu/2020/02/the-divide-between-us-urban-rural-political-differences-rooted-in-geography/
+
+Silver, L., Fetterolf, J., & Connaughton, A. (2021). Diversity and Division in Advanced Economies. In *pewresearch.org*. Pew Research Center. https://www.pewresearch.org/global/2021/10/13/diversity-and-division-in-advanced-economies/
